@@ -59,11 +59,7 @@ function _save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
 
-<<<<<<< HEAD
 function _makeId(length = 8) {
-=======
-function _makeId(length = 3) {
->>>>>>> 1fdd965fecaeec5e17724144b77bfb7a99aa5277
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (var i = 0; i < length; i++) {

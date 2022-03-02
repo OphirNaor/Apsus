@@ -88,10 +88,9 @@ function getEmptyMail() {
 }
 
 function _createMails() {
-  let mails = utilService.loadFromStorage(MAILS_KEY);
-  if (!mails || !mails.length) {
-    mails = booksList.getInitialBooks();
-    utilService.saveToStorage(MAILS_KEY, mails);
-  }
-  return mails;
+    let mails = utilService.loadFromStorage(MAILS_KEY);
+    if (!mails || !mails.length) {
+        mails = gMails
+        utilService.saveToStorage(MAILS_KEY, mails);
+    }
 }
