@@ -20,6 +20,7 @@ components: {
     },
     data() {
         return {
+            mails:null,
 
 
         }
@@ -27,8 +28,11 @@ components: {
     methods: {},
     computed: {
         mailsToShow() {
-            if (!this.filterBy) return this.mails;
-            const regex = new RegExp(this.filterBy.subject, 'i');
-            return this.mails.filter(mail => regex.test(mail.subject));
+            return this.mails;
+           
         }
     }};
+
+     // if (!this.filterBy) return this.mails;
+            // const regex = new RegExp(this.filterBy.subject, 'i');
+            // return this.mails.filter(mail => regex.test(mail.subject));

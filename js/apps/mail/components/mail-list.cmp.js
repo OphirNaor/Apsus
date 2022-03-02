@@ -6,8 +6,8 @@ export default {
   template: `
     <section class='mail-list main-app'>
         <ul>
-        <mail-preview :mail="mail"/>
             <li v-for="mail in mails" :key="mail.id">
+            <mail-preview :mail="mail"/>
             </li>
         </ul>
     </section>

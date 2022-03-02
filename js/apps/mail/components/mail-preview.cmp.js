@@ -4,9 +4,9 @@
     template: `
     <section class='mail-preview main-app'>
        
-    <div>subject: {{mail.subject}}</div>        
-        <div>body: {{mail.body}}</div>     
-        <div>to: {{mail.to}}</div>     
+    <p>subject: {{mail.subject}}</p>        
+        <p>body: {{mail.body}}</p>     
+        <p>to: {{mail.to}}</p>     
         <hr>
          
     </section>
