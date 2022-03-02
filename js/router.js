@@ -9,8 +9,8 @@ const routes = [
     component: homePage,
   },
   {
-    path: "/about",
-    component: aboutPage,
+    // path: "/about",
+    // component: aboutPage,
   },
   {
     path: "/mail",

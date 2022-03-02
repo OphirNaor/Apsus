@@ -1,5 +1,5 @@
-import { utilService } from "./js/services/util-service.js";
-import { storageService } from "./js/services/async-storage-service.js";
+import { utilService } from '../../../services/util-service.js';
+import { storageService } from '../../../services/async-storage-service.js';
 
 const MAILS_KEY = "mails";
 
@@ -14,7 +14,7 @@ const gMails = [
   },
   {
     id: "e102",
-    subject: "Miss you!",
+    subject: "Hate you!",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     isRead: false,
     sentAt: 1551133930594,
@@ -23,7 +23,7 @@ const gMails = [
 
   {
     id: "e103",
-    subject: "Miss you!",
+    subject: "Love you!",
     body: "Donec vel est odio. Sed malesuada metus dolor, sit amet bibendum mauris hendrerit sit amet. Mauris quis est vel sem ornare aliquam. Nam at est a velit dignissim ultrices suscipit id velit. Mauris tincidunt, mauris eget porta semper, lacus metus cursus lectus, sit amet elementum purus mauris sed risus. Donec mollis, dui fringilla cursus condimentum, tortor erat lobortis ipsum, ut rutrum elit metus ut quam. Praesent convallis pretium semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque consectetur justo quis arcu fermentum, sed interdum massa placerat. Donec nec nulla et ligula luctus auctor. Vestibulum vestibulum id ex ac euismod. Donec vulputate ultrices purus, nec laoreet arcu. In euismod sed magna sit amet fringilla. Proin placerat fringilla lorem, eu luctus mauris venenatis in. Vestibulum fermentum quis nisl vel accumsan.",
     isRead: false,
     sentAt: 1551133930594,
@@ -32,7 +32,7 @@ const gMails = [
 
   {
     id: "e104",
-    subject: "Miss you!",
+    subject: "Remove you!",
     body: "Vestibulum vestibulum porta enim sed rutrum. Pellentesque efficitur, arcu sed eleifend ultricies, ante nisi tempus erat, quis laoreet leo purus a orci. Maecenas dapibus maximus enim at porta. Curabitur et sem porta, tempus leo nec, gravida orci. Aenean rutrum auctor ornare. Duis convallis augue dolor, eu tincidunt erat venenatis sit amet. Maecenas mattis non ante quis placerat. Maecenas eget tempus velit, non commodo leo. Duis ac massa ornare, euismod ex ac, fringilla risus. Etiam porttitor suscipit mauris porta varius. Aliquam vitae lorem quis odio semper congue. Quisque rutrum semper dolor sed tristique. Fusce porttitor nunc in dui rhoncus imperdiet. Praesent auctor libero vitae hendrerit interdum. Nullam quis nibh dapibus nibh porttitor lobortis.",
     isRead: false,
     sentAt: 1551133930594,
@@ -41,7 +41,7 @@ const gMails = [
 
   {
     id: "e105",
-    subject: "Miss you!",
+    subject: "Added you!",
     body: "Would love to catch up sometimes",
     isRead: false,
     sentAt: 1551133930594,
@@ -64,8 +64,8 @@ function query() {
 }
 
 function save(mail) {
-  if (mail.id) return storageService.put(EMAILS_KEY, mail);
-  else return storageService.post(EMAILS_KEY, mail);
+  if (mail.id) return storageService.put(MAILS_KEY, mail);
+  else return storageService.post(MAILS_KEY, mail);
 }
 
 function remove(mailId) {
