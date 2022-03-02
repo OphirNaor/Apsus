@@ -1,6 +1,5 @@
-import homePage from "./pages/home-page.cmp.js";
-
-
+import homePage from './pages/home-page.cmp.js';
+import keepApp from './apps/keep/pages/note-app.cmp.js';
 
 const routes = [
     {
@@ -10,6 +9,16 @@ const routes = [
     {
         // path: '/about',
         // component: aboutPage,
+    },
+    {
+        path: '/keep',
+        component: keepApp,
+        // children: [
+        //     {
+        //         path: '',
+        //         component: 
+        //     },
+        //     ]
     },
 
 ];
