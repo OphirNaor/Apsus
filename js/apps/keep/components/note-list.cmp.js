@@ -1,4 +1,5 @@
 import { eventBus } from '../../../services/event-bus-service.js'
+import notePreview from './note-preview.cmp.js';
 
 
 
@@ -6,8 +7,11 @@ export default {
     props: ['notes'],
     template: `
     <section class="note-list">
-                <div class="main-screen" :class="{'menu-open':selectedNote}" @click="toggleMenu"></div>
-                <note-preview :note="(selectedNote && note.id === selectedNote.id) ? selectedNote: note" />
+    <div class="note-list">
+                <span v-for="note in notes" :key="note.id" class="note-preview-container" >
+                    <note-preview :note="note" />
+                </span>
+            </div>
     </section>
 
     
@@ -23,10 +27,10 @@ export default {
 
     },
     methods: {
-        toggleMenu() {
-            eventBus.emit('unSelect', this.selectedNote.id)
-            this.selectedNote = null
-        },
+        // toggleMenu() {
+        //     eventBus.emit('unSelect', this.selectedNote.id)
+        //     this.selectedNote = null
+        // },
 
 
     },
@@ -38,6 +42,7 @@ export default {
 
     components: {
         eventBus,
+        notePreview
 
 
 
