@@ -13,8 +13,8 @@ export default {
             </section>
             <section class = "nav-links">
                 <router-link active-class="active" class="header-link" to="/mail">Mail </router-link>|
-                <router-link class="header-link" to="/keep">Keep</router-link>|
-                <router-link class="header-link" to="/book">Books</router-link>
+                <router-link class="header-link" to="/note">Keep</router-link>|
+                <!-- <router-link class="header-link" to="/book">Books</router-link> -->
             </section>
         </nav>
     </header>

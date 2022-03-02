@@ -1,5 +1,5 @@
-import { eventBus } from '../../../services/event-bus-service.js'
-import notePreview from './note-preview.cmp.js';
+import { eventBus } from '../../../services/eventBus-service.js'
+import notePreview from './note-preview.cmp.js'
 
 
 

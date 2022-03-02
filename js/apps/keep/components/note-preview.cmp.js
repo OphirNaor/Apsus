@@ -1,4 +1,4 @@
-import { eventBus } from '../../../services/event-bus-service.js'
+import { eventBus } from '../../../services/eventBus-service.js'
 
 
 
@@ -7,15 +7,14 @@ export default {
     props: ['note'],
     template: `
     <section class="note-priview">
-        <h4>NOTE</h4>
-        <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, quod!</P>
-
+        <h4>{{note.info.title}}</h4>
     </section>
     
     
     `,
     data() {
         return {
+
 
         };
     },
