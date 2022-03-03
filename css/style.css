@@ -5,7 +5,6 @@
 
 /* Base */
 @import url(base/main.css);
-@import url(base/layout.css);
 @import url(base/helpers.css);
 @import url(base/mq.css);
 
@@ -13,3 +12,7 @@
 
 /* Componenets */
 @import url(componenets/main-header.css);
+
+
+/* apps */
+@import url(apps/keep/note-app.css);
