@@ -12,10 +12,16 @@
 
 }
 
+/* 
 .action-container {
     position: relative;
     padding-top: 1em;
+    visibility: hidden;
 }
+
+.action-container:hover {
+    visibility: visible;
+} */
 
 
 .color-palette {
