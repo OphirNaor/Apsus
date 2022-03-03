@@ -7,7 +7,7 @@ export default {
     <section class='mail-list main-app'>
         <ul>
             <li v-for="mail in mails" :key="mail.id">
-            <mail-preview :mail="mail"/>
+            <mail-preview :mail="mail" @remove="deleteMail"/>
             </li>
         </ul>
     </section>
@@ -19,4 +19,10 @@ export default {
     mailService,
     mailPreview,
   },
-};
+
+methods:{
+    deleteMail(mailId){
+        this.$emit('remove',mailId);
+    },
+}
+}

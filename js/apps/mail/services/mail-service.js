@@ -1,7 +1,13 @@
 import { utilService } from '../../../services/util-service.js';
 import { storageService } from '../../../services/async-storage-service.js';
 
+
 const MAILS_KEY = "mails";
+
+export const loggedinUser = {
+    email: 'user@appsus.com',
+    fullname: 'Mahatma Appsus'
+   }
 
 const gMails = [
   {
