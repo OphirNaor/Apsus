@@ -1,6 +1,7 @@
 import { eventBus } from '../../../services/eventBus-service.js'
-// import { noteTxt } from './note-txt.cmp.js';
-// import { noteImg } from './note-img.cmp.js';
+import noteTxt from './note-txt.cmp.js';
+import noteImg from './note-img.cmp.js';
+import noteTODO from './note-todo.cmp.js';
 
 
 
@@ -9,10 +10,10 @@ export default {
     props: ['note'],
     template: `
     <section class="note-priview">
-        <h4>{{note.info.title}}</h4>       
+    <component id="component" :is="note.type" :info="note.info" />       
         <div class="actions-container flex space-between">
         <a class="fa-solid fa-thumbtack pin-note" @click.stop="pin(note.id)"title="Pin note"></a>
-        <a class="fa fa-trash" @click.stop="remove(note.id)"title="Delete note"></a>
+        <a class="fa fa-trash" @click="remove(note.id)"title="Delete note"></a>
         <a class="fa fa-clone duplicate-note" @click.stop="duplicate(note.id)"title="Duplicate note"></a>
         <a class="fa fa-envelope" @click.stop="sendByMail"></a>
         <a class="" @click="">&#10530</a>
@@ -64,8 +65,9 @@ export default {
 
 
     components: {
-        // noteTxt,
-        // noteImg
+        noteTxt,
+        noteImg,
+        noteTODO
 
 
     }

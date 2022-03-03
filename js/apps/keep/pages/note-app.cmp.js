@@ -19,6 +19,7 @@ export default {
         return {
             notes: null
 
+
         };
     },
     created() {
@@ -27,6 +28,12 @@ export default {
 
     },
     methods: {
+        // removeNote(id) {
+        //     noteService.remove(id)
+        //         .then(() => {
+        //             const idx = this.notes.findIndex(note => note.id === id);
+        //             this.notes.splice(idx, 1);
+        //         });
 
 
     },

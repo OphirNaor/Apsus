@@ -1,5 +1,7 @@
-import { eventBus } from '../../../services/eventBus-service.js'
+// import { eventBus } from '../../../services/eventBus-service.js'
 import notePreview from './note-preview.cmp.js'
+// import noteImg from './note-img.cmp.js';
+// import noteTxt from './note-txt.cmp.js';
 
 
 
@@ -8,9 +10,9 @@ export default {
     template: `
     <section class="note-list">
     <div class="note-list">
-                <span v-for="note in notes" :key="note.id" class="note-preview-container" >
+                <div v-for="note in notes" :key="note.id" class="note-preview-container" >                
                     <note-preview :note="note" />
-                </span>
+                </div>
             </div>
     </section>
 
@@ -41,8 +43,8 @@ export default {
 
 
     components: {
-        eventBus,
         notePreview
+
 
 
 

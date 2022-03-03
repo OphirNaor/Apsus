@@ -32,9 +32,9 @@ function _createNotes() {
             {
                 id: "n101",
                 type: "note-txt",
-                isPinned: false,
+                isPinned: true,
                 info: {
-                    title: `Fullstack Me Baby!`
+                    txt: `Fullstack Me Baby!`
                 },
                 style: {
                     bgc: "#ffffff"
@@ -45,8 +45,8 @@ function _createNotes() {
                 type: "note-img",
                 isPinned: false,
                 info: {
-                    title: "Bobi and Me",
-                    url: "http://some-img/me",
+                    title: "My Sweet Dog",
+                    url: "./img/mydog.jpg",
                 },
                 style: {
                     bgc: "#ffffff"
@@ -99,14 +99,12 @@ function _createNotes() {
             },
             {
                 id: "n106",
-                type: "note-todos",
+                type: "note-img",
                 isPinned: false,
                 info: {
-                    title: "Get my stuff together",
-                    todos: [
-                        { txt: "Driving liscence", done: false },
-                        { txt: "Coding power", done: true }
-                    ]
+                    title: "My Ex",
+                    url: "./img/myex.jpg",
+
                 },
                 style: {
                     bgc: "#ffffff"

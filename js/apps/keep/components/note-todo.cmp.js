@@ -1,13 +1,16 @@
-// import { eventBus } from "../../../services/eventBus-service";
-
-
 export default {
     props: ['info'],
     template: `
-    <section class="note-img">
-            <h1>{{info.title}}</h1>
-            <img :src="info.url"/>
-       </section>
+    <section class="note-todo">
+        <h1>{{info.title}}</h1>
+        <ul>
+            <li>
+                {{info.todos}}
+
+            </li>
+        </ul>
+
+    </section>
     
     
     `,
@@ -30,7 +33,6 @@ export default {
 
 
     components: {
-        // eventBus
 
 
     }

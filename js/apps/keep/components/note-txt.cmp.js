@@ -1,22 +1,17 @@
-import { eventBus } from "../../../services/eventBus-service";
+// import { eventBus } from "../../../services/eventBus-service";
 
 
-export const noteTxt = {
-    props: ['note'],
+export default {
+    props: ['info'],
     template: `
-    <section class="note-txt" @click = "selected = true">
-            <pre class="txt-editor" 
-            :class="note.id" id="note-txt" 
-            contenteditable="true" @click.stop="" 
-            @focusout="setTxt(note.id)">{{note.info.title}}</pre>
-
+    <section class= "note-txt">
+            {{info.txt}}
     </section>
     
     
     `,
     data() {
         return {
-            selected: false,
 
         };
     },
@@ -24,11 +19,7 @@ export const noteTxt = {
 
     },
     methods: {
-        setTxt(noteId) {
-            if (!document.querySelector(`.txt-editor.${noteId}`)) return
-            const txt = document.querySelector(`.txt-editor.${noteId}`).innerText
-            eventBus.emit('setTxt', noteId, txt)
-        },
+
 
 
     },
