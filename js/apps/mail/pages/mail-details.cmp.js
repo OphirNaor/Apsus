@@ -1,4 +1,5 @@
 import { mailService } from "../services/mail-service.js";
+import mailFilter from "../components/mail-filter.cmp.js";
 
 export default {
     template: `
@@ -20,5 +21,11 @@ created(){
 },
 components: {
     mailService,
-}
+    mailFilter,
+},
+methods: {
+    deleteMail(mailId){
+        this.$emit('remove',mailId)
+    }
+},
 }

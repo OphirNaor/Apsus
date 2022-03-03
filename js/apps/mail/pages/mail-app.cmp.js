@@ -39,6 +39,7 @@ export default {
     },
     setFilter(filterBy) {
       this.filterBy = filterBy;
+    //   console.log(this.filterBy)
     },
     deleteMail() {
         mailService.remove(mailId)
@@ -51,6 +52,12 @@ export default {
   computed: {
     mailsToShow() {
      if (!this.filterBy) return this.mails;
+     if (this.filterBy === 'starred') {
+         return this.mails.filter(mail => mail.isStar)
+     }
+     if (this.filterBy === 'sent') {
+        return this.mails.filter(mail => mail.isSent)
+
     }
   }
-  }}
+  }}}

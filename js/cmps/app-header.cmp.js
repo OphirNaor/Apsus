@@ -16,6 +16,12 @@ export default {
                 <router-link class="header-link" to="/note">Keep</router-link>|
                 <router-link class="header-link" to="/book">Books</router-link>
             </section>
+            <section class="search-container">
+                    <input class="search" autocomplete="off" placeholder="Search..."  type="text" @input="search">
+                    <i class="fas fa-search icon" ></i>
+       
+                
+</section>
         </nav>
     </header>
     `,

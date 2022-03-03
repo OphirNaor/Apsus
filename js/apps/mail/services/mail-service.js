@@ -17,6 +17,8 @@ const gMails = [
     isRead: false,
     sentAt: 1551133930594,
     to: "momo@momo.com",
+    isSent: false,
+    isStar:false,
   },
   {
     id: "e102",
@@ -25,6 +27,8 @@ const gMails = [
     isRead: false,
     sentAt: 1551133930594,
     to: "momo@momo.com",
+    isSent: false,
+    isStar:false,
   },
 
   {
@@ -34,6 +38,8 @@ const gMails = [
     isRead: false,
     sentAt: 1551133930594,
     to: "momo@momo.com",
+    isSent: false,
+    isStar:false,
   },
 
   {
@@ -43,6 +49,8 @@ const gMails = [
     isRead: false,
     sentAt: 1551133930594,
     to: "momo@momo.com",
+    isSent: false,
+    isStar:false,
   },
 
   {
@@ -52,6 +60,8 @@ const gMails = [
     isRead: false,
     sentAt: 1551133930594,
     to: "momo@momo.com",
+    isSent: false,
+    isStar:false,
   },
 ];
 
@@ -90,6 +100,9 @@ function getEmptyMail() {
     isRead: false,
     sentAt: 1551133930594,
     to: "",
+    isSent: false,
+    isStar:false,
+
   };
 }
 
