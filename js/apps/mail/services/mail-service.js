@@ -8,6 +8,11 @@ export const loggedinUser = {
   fullname: "Mahatma Appsus",
 };
 
+<<<<<<< HEAD
+=======
+// _createMails();
+
+>>>>>>> 5797635f211cdfdb47d4c9138e0ce05a77371981
 export const mailService = {
   query,
   setStarMail,
@@ -93,26 +98,33 @@ function query() {
 
 function setStarMail(mailId) {
   return getById(mailId)
-        .then(mail => {
-          mail.isStared = !mail.isStared
-   return storageService.put(MAILS_KEY, mail);
-} )
+    .then(mail => {
+      mail.isStared = !mail.isStared
+      return storageService.put(MAILS_KEY, mail);
+    })
 }
 
 function removeMail(mailId) {
   return getById(mailId)
+<<<<<<< HEAD
   .then(mail => {
       mail.isremoveMaild = true
   return storageService.put(MAILS_KEY, mailId);
 })
+=======
+    .then(mail => {
+      mail.isRemoved = true
+      return storageService.put(MAILS_KEY, mailId);
+    })
+>>>>>>> 5797635f211cdfdb47d4c9138e0ce05a77371981
 }
 
 function updateMail(mailId) {
   return getById(mailId)
-      .then(mail => {
-          mail.isRead = true
-          return storageService.put(MAILS_KEY, mail)
-      })
+    .then(mail => {
+      mail.isRead = true
+      return storageService.put(MAILS_KEY, mail)
+    })
 }
 
 function addNewMail(newMail) {
@@ -136,10 +148,10 @@ function getEmptyMail() {
   };
 }
 
-function _createMails() {
-  let mails = utilService.loadFromStorage(MAILS_KEY);
-  if (!mails || !mails.length) {
-    mails = gMails;
-    utilService.saveToStorage(MAILS_KEY, mails);
-  }
-}
+// function _createMails() {
+//   let mails = utilService.loadFromStorage(MAILS_KEY);
+//   if (!mails || !mails.length) {
+//     mails = gMails;
+//     utilService.saveToStorage(MAILS_KEY, mails);
+//   }
+// }

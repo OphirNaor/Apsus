@@ -10,7 +10,7 @@ export default {
     <section class="note-app app-main" >
         <note-add/>
             <!-- <note-filter @filtered="setFilter" /> -->
-        <note-list :notes="notesToShow"> </note-list>
+        <note-list :notes="notesToShow" @remove="removeNote"/>
     </section>
     
     
@@ -28,12 +28,12 @@ export default {
 
     },
     methods: {
-        // removeNote(id) {
-        //     noteService.remove(id)
-        //         .then(() => {
-        //             const idx = this.notes.findIndex(note => note.id === id);
-        //             this.notes.splice(idx, 1);
-        //         });
+        removeNote(id) {
+            console.log('delete');
+            noteService.remove(id)
+            const idx = this.notes.findIndex(note => note.id === id)
+            this.notes.splice(idx, 1);
+        }
 
 
     },
@@ -54,6 +54,7 @@ export default {
 
     }
 }
+
 
 
 
