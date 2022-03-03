@@ -61,6 +61,81 @@ function _createNotes() {
                 style: {
                     bgc: "#ffffff"
                 }
+            },
+            {
+                id: "n104",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    title: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", done: false },
+                        { txt: "Coding power", done: true }
+                    ]
+                },
+                style: {
+                    bgc: "#ffffff"
+                }
+            },
+            {
+                id: "n104",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    title: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", done: false },
+                        { txt: "Coding power", done: true }
+                    ]
+                },
+                style: {
+                    bgc: "#ffffff"
+                }
+            },
+            {
+                id: "n106",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    title: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", done: false },
+                        { txt: "Coding power", done: true }
+                    ]
+                },
+                style: {
+                    bgc: "#ffffff"
+                }
+            },
+            {
+                id: "n107",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    title: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", done: false },
+                        { txt: "Coding power", done: true }
+                    ]
+                },
+                style: {
+                    bgc: "#ffffff"
+                }
+            },
+            {
+                id: "n108",
+                type: "note-todos",
+                isPinned: false,
+                info: {
+                    title: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", done: false },
+                        { txt: "Coding power", done: true }
+                    ]
+                },
+                style: {
+                    bgc: "#ffffff"
+                }
             }
         ];
         utilService.saveToStorage(NOTES_KEY, notes);
