@@ -1,0 +1,34 @@
+.note-preview-container {
+    padding: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #EED971FF;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: 10px;
+
+}
+
+.action-container {
+    position: relative;
+    padding-top: 1em;
+}
+
+
+.color-palette {
+    position: absolute;
+    left: 30px;
+    bottom: 0px;
+    padding: 0px;
+    list-style: none;
+    display: none;
+    grid-template-columns: repeat(4, 30px);
+    grid-template-rows: repeat(3, 30px);
+    gap: 1px;
+    transition: 0.5s;
+    margin: 0;
+    z-index: 20;
+}
