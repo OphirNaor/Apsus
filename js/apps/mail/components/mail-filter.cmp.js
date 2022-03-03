@@ -6,6 +6,8 @@ export default {
     },
     data() {
         return {
+            filterBy:null,
+            
         }
     },
     created() {
@@ -13,6 +15,9 @@ export default {
     },
 
     methods: {
+        filter(){
+            // this.$router.push('/mail')
+        }
 
     },
     computed: {

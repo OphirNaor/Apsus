@@ -1,42 +1,56 @@
-import mailList from "../components/mail-list.cmp.js"
-import { mailService } from "../services/mail-service.js"
+import mailList from "../components/mail-list.cmp.js";
+import { mailService } from "../services/mail-service.js";
+import mailFilter from "../components/mail-filter.cmp.js";
 
 export default {
-    template: `
+  template: `
     <section class="mail-app app-main">
         <h1>Email:</h1>
-       
-     <mail-list :mails="mailsToShow"> </mail-list> 
+       <mail-filter @filtered="setFilter"></mail-filter>
+     <mail-list :mails="mailsToShow" @remove="deleteMail"> </mail-list> 
     </section>
     `,
 
-    components: {
-        mailList,
-    },
+  components: {
+    mailList,
+    mailService,
+    mailFilter,
+  },
 
-    created() {
-        mailService.query()
-            .then(mails => this.mails = mails);
+  created() {
+    mailService.query().then((mails) => (this.mails = mails));
+  },
+  data() {
+    return {
+      mails: null,
+      selectedMail:null,
+      filterBy: null,
+      counter:0,
+    };
+  },
+  methods: {
+    loadMails() {
+      mailService.query().then((mails) => {
+        this.mails = mails;
+      });
     },
-    data() {
-        return {
-            mails: null,
-
-
-        }
+    selectMail(mail) {
+      this.selectedMail = mail;
     },
-    methods: {
-        loadMails(){
-            mailService.query()
-            .then(mails => {
-                this.mails = mails
-            });
-        }
+    setFilter(filterBy) {
+      this.filterBy = filterBy;
     },
-    computed: {
-        mailsToShow() {
-            return this.mails;
+    deleteMail() {
+        mailService.remove(mailId)
+        .then(() => {
+            this.mails = this.mails.filter(mail => mail.id !== mailId)
+            this.loadMails();
+        })
+  },
 
-        }
+  computed: {
+    mailsToShow() {
+     if (!this.filterBy) return this.mails;
     }
-};
+  }
+  }}
