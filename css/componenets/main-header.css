@@ -1,0 +1,45 @@
+.app-footer,
+.app-header {
+    background: lightgray;
+    height: 10vh;
+    text-align: center;
+
+}
+
+
+.app-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.nav-links {
+    padding: 10px;
+    margin: 15px;
+}
+
+.header-link {
+    color: rgb(138, 132, 132);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+
+}
+
+.header-link:hover {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.header-link:active {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.logo {
+    height: 55px;
+    margin-left: 20px;
+
+}

@@ -9,19 +9,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 body {
     margin: 0;
-    text-decoration: none;
 }
 
-
-/* .app-footer,
-.app-header */
-.app-footer,
-.app-header {
-    background: linear-gradient(#EE4E34, #353333);
-    height: 5vh;
-    text-align: center;
-
-}
 
 
 /* app-main */
@@ -29,6 +18,7 @@ body {
     min-height: diff;
     max-width: 100vw;
     background-color: #FCEDDA;
+    height: 100vh;
     ;
 
 }
