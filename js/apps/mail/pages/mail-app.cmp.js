@@ -25,7 +25,14 @@ export default {
 
         }
     },
-    methods: {},
+    methods: {
+        loadMails(){
+            mailService.query()
+            .then(mails => {
+                this.mails = mails
+            });
+        }
+    },
     computed: {
         mailsToShow() {
             return this.mails;
@@ -33,7 +40,3 @@ export default {
         }
     }
 };
-
-     // if (!this.filterBy) return this.mails;
-            // const regex = new RegExp(this.filterBy.subject, 'i');
-            // return this.mails.filter(mail => regex.test(mail.subject));
