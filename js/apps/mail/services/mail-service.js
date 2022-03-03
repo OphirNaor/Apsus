@@ -8,7 +8,7 @@ export const loggedinUser = {
   fullname: "Mahatma Appsus",
 };
 
-_createMails();
+// _createMails();
 
 export const mailService = {
   query,
@@ -91,26 +91,26 @@ function query() {
 
 function setStarMail(mailId) {
   return getById(mailId)
-        .then(mail => {
-          mail.isStared = !mail.isStared
-   return storageService.put(MAILS_KEY, mail);
-} )
+    .then(mail => {
+      mail.isStared = !mail.isStared
+      return storageService.put(MAILS_KEY, mail);
+    })
 }
 
 function remove(mailId) {
   return getById(mailId)
-  .then(mail => {
+    .then(mail => {
       mail.isRemoved = true
-  return storageService.put(MAILS_KEY, mailId);
-})
+      return storageService.put(MAILS_KEY, mailId);
+    })
 }
 
 function updateMail(mailId) {
   return getById(mailId)
-      .then(mail => {
-          mail.isRead = true
-          return storageService.put(MAILS_KEY, mail)
-      })
+    .then(mail => {
+      mail.isRead = true
+      return storageService.put(MAILS_KEY, mail)
+    })
 }
 
 function addNewMail(newMail) {
@@ -134,10 +134,10 @@ function getEmptyMail() {
   };
 }
 
-function _createMails() {
-  let mails = utilService.loadFromStorage(MAILS_KEY);
-  if (!mails || !mails.length) {
-    mails = gMails;
-    utilService.saveToStorage(MAILS_KEY, mails);
-  }
-}
+// function _createMails() {
+//   let mails = utilService.loadFromStorage(MAILS_KEY);
+//   if (!mails || !mails.length) {
+//     mails = gMails;
+//     utilService.saveToStorage(MAILS_KEY, mails);
+//   }
+// }

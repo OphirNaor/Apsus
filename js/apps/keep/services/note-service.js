@@ -225,7 +225,6 @@ function addNewNote(note) {
 }
 
 function remove(noteId) {
-    // return Promise.reject('Big balagan!')
     return storageService.remove(NOTES_KEY, noteId);
 }
 
