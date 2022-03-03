@@ -2,7 +2,7 @@ export default {
     template: `
         <div class="mail-filter">
             
-             <input @input="filter" v-model="filterBy.subject" type="search" placeholder="Search..." >
+             <input @input="filter" v-model="filterBy.subject" type="search" placeholder="Search mails in..." >
            
             <select @change="filter" v-model="filterBy.isRead">
                 <option value= "all" >All</option>
