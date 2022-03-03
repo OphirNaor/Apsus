@@ -29,7 +29,7 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isremoveMaild: false,
+    isRemoved: false,
   },
   {
     id: "e102",
@@ -41,7 +41,7 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isremoveMaild: false,
+    isRemoved: false,
   },
 
   {
@@ -54,7 +54,7 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isremoveMaild: false,
+    isRemoved: false,
   },
 
   {
@@ -67,7 +67,7 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isremoveMaild: false,
+    isRemoved: false,
   },
 
   {
@@ -79,7 +79,7 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isremoveMaild: false,
+    isRemoved: false,
   },
 ];
 
@@ -98,7 +98,7 @@ function setStarMail(mailId) {
 
 function removeMail(mailId) {
   return getById(mailId).then((mail) => {
-    mail.isremoveMaild = true;
+    mail.isRemoved = true;
     return storageService.put(MAILS_KEY, mailId);
   });
 }
@@ -117,6 +117,11 @@ function addNewMail(newMail) {
 function getById(mailId) {
   return storageService.get(MAILS_KEY, mailId);
 }
+
+var time = new Date();
+console.log(
+  time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+);
 
 function getEmptyMail() {
   return {

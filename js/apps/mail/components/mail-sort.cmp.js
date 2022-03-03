@@ -3,8 +3,8 @@ export default {
         <div class="mail-sort">
             <label>Sort by: 
                 <select @change="sort" v-model="sortingBy">
-                    <option value= "date" >Date</option>
-                    <option value= "subject" >Subject </option>
+                    <option value= "date">Date</option>
+                    <option value= "subject">Subject</option>
                 </select>
             </label>
         </div>
@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     sort() {
-      this.$emit("sort", this.sortingBy);
+      this.emit("sort", this.sortingBy);
     },
   },
 };

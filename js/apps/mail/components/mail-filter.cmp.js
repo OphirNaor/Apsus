@@ -21,8 +21,8 @@ export default {
     },
     methods: {
         filter() {
-            console.log(this.filterBy);
-            this.$emit('filtered', {...this.filterBy });
+            // console.log(this.filterBy);
+            this.emit('filtered', {...this.filterBy });
 
         }
     }

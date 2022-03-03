@@ -94,14 +94,7 @@ methods: {
                 };
                 eventBus.emit('showMsg', msg);
             })
-            // .catch(err => {
-            //     // console.log('err', err);
-            //     // const msg = {
-            //     //     txt: 'Error. Please try later',
-            //     //     type: 'error'
-            //     // };
-            //     // eventBus.emit('showMsg', msg);
-            // });
+
     },
     setStarMail(mailId) {
         mailService.setStarMail(mailId)
@@ -114,14 +107,6 @@ methods: {
                 };
                 eventBus.emit('showMsg', msg);
             })
-            .catch(err => {
-                console.log('err', err);
-                const msg = {
-                    txt: 'Error. Please try later',
-                    type: 'error'
-                };
-                eventBus.emit('showMsg', msg);
-            });
     },
     updateMail(mailId) {
         mailService.updateMail(mailId)
@@ -188,12 +173,12 @@ computed: {
 
         if (!this.filterBy) return this.taggedMails;
 
-        const searchStr = this.filterBy.subject.toLowerCase();
+        const searchStr = this.filterBy.subject
         var read = this.filterBy.isRead
 
 
         const filterMail = this.taggedMails.filter(mail => {
-            return mail.subject.toLowerCase().includes(searchStr)
+            return mail.subject.includes(searchStr)
 
         })
 
