@@ -5,7 +5,7 @@ import mailFilter from "../components/mail-filter.cmp.js";
 export default {
   template: `
     <section class="mail-app app-main">
-        <h1>Email:</h1>
+        <h1>Emails:</h1>
        <mail-filter @filtered="setFilter"></mail-filter>
      <mail-list :mails="mailsToShow" @remove="deleteMail"> </mail-list> 
     </section>
@@ -18,6 +18,8 @@ export default {
   },
 
   created() {
+      this.loadMails();
+
     mailService.query().then((mails) => (this.mails = mails));
   },
   data() {
@@ -59,5 +61,6 @@ export default {
         return this.mails.filter(mail => mail.isSent)
 
     }
+    return this.filterBy
   }
   }}}
