@@ -1,16 +1,6 @@
-.note-list {
-    margin: auto;
-    columns: 3 200px;
-    max-width: 1000px;
-    gap: 15px;
-    display: flex;
-}
-
-
 .note-add {
     background-color: #fff;
     padding: 10px 0;
-    /* display: inline-block; */
     width: 600px;
     margin: 0 auto 2em;
     max-width: 100%;
