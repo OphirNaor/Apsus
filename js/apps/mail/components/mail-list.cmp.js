@@ -1,28 +1,28 @@
-import { mailService } from "../services/mail-service.js";
-import  mailPreview from "../components/mail-preview.cmp.js";
+import mailPreview from "../components/mail-preview.cmp.js";
 
 export default {
   props: ["mails"],
   template: `
-    <section class='mail-list main-app'>
-        <ul>
-            <li v-for="mail in mails" :key="mail.id">
-            <mail-preview :mail="mail" @remove="deleteMail"/>
-            </li>
-        </ul>
-    </section>
+        <section class="mail-list">
+
+                <div v-for="mail in mails" :key="mail.id" class="mail-list-container">
+                    <mail-preview @read="mailRead" @staredMail="staredMail" @removeMail="deleteMail" :mail="mail" />    
+                </div>
+
+        </section>
     `,
-      data() {
-        return {}
+  methods: {
+    deleteMail(mailId) {
+      this.$emit("removeMail", mailId);
     },
+    staredMail(mailId) {
+      this.$emit("staredMail", mailId);
+    },
+    mailRead(mailId) {
+      this.$emit("read", mailId);
+    },
+  },
   components: {
-    mailService,
     mailPreview,
   },
-
-methods:{
-    deleteMail(mailId){
-        this.$emit('remove',mailId);
-    },
-}
-}
+};

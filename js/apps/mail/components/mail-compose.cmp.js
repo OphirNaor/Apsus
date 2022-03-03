@@ -1,21 +1,16 @@
 export default {
-    props: [''],
     template: `
+        <section class="mail-compose">
+                <div @click="openNewMail" class="compose-mail-btn">               
+                    <button>Compose</button>
+                </div>
+    </section>
     `,
-    components: {
-    },
-    data() {
-        return {
-        }
-    },
-    created() {
-
-    },
-
     methods: {
+        openNewMail() {
+            this.$emit('new')
+        },
 
-    },
-    computed: {
-   
-    },
+
+    }
 }

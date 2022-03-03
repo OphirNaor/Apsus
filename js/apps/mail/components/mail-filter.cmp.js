@@ -1,31 +1,29 @@
 export default {
-    props: [''],
     template: `
-    <section class="mails-filter">
-    
-
-    </section>
-
+        <div class="mail-filter">
+            
+             <input @input="filter" v-model="filterBy.subject" type="search" placeholder="Search..." >
+           
+            <select @change="filter" v-model="filterBy.isRead">
+                <option value= "all" >All</option>
+                <option value= "true" >Read</option>
+                <option value= "false" >Unread</option>
+            </select>
+        </div>
     `,
-    components: {
-    },
     data() {
         return {
-            filterBy:null,
-
-        }
+            filterBy: {
+                subject: '',
+                isRead: ''
+            }
+        };
     },
-    created() {
-
-    },
-
     methods: {
-        filter(){
-            // this.$router.push('/mail')
-        }
+        filter() {
+            console.log(this.filterBy);
+            this.$emit('filtered', {...this.filterBy });
 
-    },
-    computed: {
-   
-    },
+        }
+    }
 }

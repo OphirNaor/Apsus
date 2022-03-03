@@ -9,10 +9,6 @@ const routes = [
     component: homePage,
   },
   {
-    // path: "/about",
-    // component: aboutPage,
-  },
-  {
     path: "/mail",
     component: mailApp,
   },
@@ -24,6 +20,14 @@ const routes = [
     path: "/note",
     component: noteApp,
   },
+  // {
+//     path: '/book',
+//     component: bookApp
+// },
+// {
+//     path: '/book/:bookId',
+//     component: bookDetails
+// },
 ];
 
 export const router = VueRouter.createRouter({

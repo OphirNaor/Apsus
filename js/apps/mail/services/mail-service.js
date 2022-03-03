@@ -8,12 +8,10 @@ export const loggedinUser = {
   fullname: "Mahatma Appsus",
 };
 
-_createMails();
-
 export const mailService = {
   query,
   setStarMail,
-  remove,
+  removeMail,
   updateMail,
   getById,
   getEmptyMail,
@@ -31,7 +29,7 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isRemoved: false,
+    isremoveMaild: false,
   },
   {
     id: "e102",
@@ -43,7 +41,7 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isRemoved: false,
+    isremoveMaild: false,
   },
 
   {
@@ -56,20 +54,20 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isRemoved: false,
+    isremoveMaild: false,
   },
 
   {
     id: "e104",
     from: "Sony Corporation",
-    subject: "Remove you!",
+    subject: "removeMail you!",
     body: "Vestibulum vestibulum porta enim sed rutrum. Pellentesque efficitur, arcu sed eleifend ultricies, ante nisi tempus erat, quis laoreet leo purus a orci. Maecenas dapibus maximus enim at porta. Curabitur et sem porta, tempus leo nec, gravida orci. Aenean rutrum auctor ornare. Duis convallis augue dolor, eu tincidunt erat venenatis sit amet. Maecenas mattis non ante quis placerat. Maecenas eget tempus velit, non commodo leo. Duis ac massa ornare, euismod ex ac, fringilla risus. Etiam porttitor suscipit mauris porta varius. Aliquam vitae lorem quis odio semper congue. Quisque rutrum semper dolor sed tristique. Fusce porttitor nunc in dui rhoncus imperdiet. Praesent auctor libero vitae hendrerit interdum. Nullam quis nibh dapibus nibh porttitor lobortis.",
     isRead: false,
     sentAt: new Date().toString(),
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isRemoved: false,
+    isremoveMaild: false,
   },
 
   {
@@ -81,9 +79,13 @@ const gMails = [
     to: "momo@momo.com",
     isSent: false,
     isStar: false,
-    isRemoved: false,
+    isremoveMaild: false,
   },
 ];
+
+
+_createMails();
+
 
 function query() {
   return storageService.query(MAILS_KEY);
@@ -97,10 +99,10 @@ function setStarMail(mailId) {
 } )
 }
 
-function remove(mailId) {
+function removeMail(mailId) {
   return getById(mailId)
   .then(mail => {
-      mail.isRemoved = true
+      mail.isremoveMaild = true
   return storageService.put(MAILS_KEY, mailId);
 })
 }
