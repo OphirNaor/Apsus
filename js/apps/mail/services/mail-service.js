@@ -8,11 +8,6 @@ export const loggedinUser = {
   fullname: "Mahatma Appsus",
 };
 
-<<<<<<< HEAD
-=======
-// _createMails();
-
->>>>>>> 5797635f211cdfdb47d4c9138e0ce05a77371981
 export const mailService = {
   query,
   setStarMail,
@@ -88,47 +83,35 @@ const gMails = [
   },
 ];
 
-
 _createMails();
-
 
 function query() {
   return storageService.query(MAILS_KEY);
 }
 
 function setStarMail(mailId) {
-  return getById(mailId)
-    .then(mail => {
-      mail.isStared = !mail.isStared
-      return storageService.put(MAILS_KEY, mail);
-    })
+  return getById(mailId).then((mail) => {
+    mail.isStared = !mail.isStared;
+    return storageService.put(MAILS_KEY, mail);
+  });
 }
 
 function removeMail(mailId) {
-  return getById(mailId)
-<<<<<<< HEAD
-  .then(mail => {
-      mail.isremoveMaild = true
-  return storageService.put(MAILS_KEY, mailId);
-})
-=======
-    .then(mail => {
-      mail.isRemoved = true
-      return storageService.put(MAILS_KEY, mailId);
-    })
->>>>>>> 5797635f211cdfdb47d4c9138e0ce05a77371981
+  return getById(mailId).then((mail) => {
+    mail.isremoveMaild = true;
+    return storageService.put(MAILS_KEY, mailId);
+  });
 }
 
 function updateMail(mailId) {
-  return getById(mailId)
-    .then(mail => {
-      mail.isRead = true
-      return storageService.put(MAILS_KEY, mail)
-    })
+  return getById(mailId).then((mail) => {
+    mail.isRead = true;
+    return storageService.put(MAILS_KEY, mail);
+  });
 }
 
 function addNewMail(newMail) {
-  return storageService.post(MAILS_KEY, newMail)
+  return storageService.post(MAILS_KEY, newMail);
 }
 
 function getById(mailId) {
@@ -148,10 +131,10 @@ function getEmptyMail() {
   };
 }
 
-// function _createMails() {
-//   let mails = utilService.loadFromStorage(MAILS_KEY);
-//   if (!mails || !mails.length) {
-//     mails = gMails;
-//     utilService.saveToStorage(MAILS_KEY, mails);
-//   }
-// }
+function _createMails() {
+  let mails = utilService.loadFromStorage(MAILS_KEY);
+  if (!mails || !mails.length) {
+    mails = gMails;
+    utilService.saveToStorage(MAILS_KEY, mails);
+  }
+}
