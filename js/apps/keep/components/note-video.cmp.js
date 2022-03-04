@@ -1,11 +1,8 @@
-// import { eventBus } from "../../../services/eventBus-service";
-
-
 export default {
     props: ['info'],
     template: `
-    <section class= "note-txt">
-            <h1>{{info.txt}}</h1>
+    <section class= "note-video">
+           <iframe src="" frameborder="0"></iframe>
     </section>
     
     
@@ -24,6 +21,8 @@ export default {
 
     },
     computed: {
+        // if (this.urlToEdit.includes('watch?v=')) return this.urlToEdit.replace('watch?v=', 'embed/')
+        // else return this.urlToEdit
 
 
     },
