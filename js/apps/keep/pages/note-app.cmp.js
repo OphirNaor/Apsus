@@ -2,6 +2,8 @@ import { noteService } from '../services/note-service.js';
 import { eventBus } from '../../../services/eventBus-service.js'
 import noteList from '../components/note-list.cmp.js';
 import noteAdd from '../components/note-add.cmp.js';
+import noteFilter from '../components/note-filter.cmp.js';
+
 
 
 
@@ -9,7 +11,7 @@ export default {
     template: `
     <section class="note-app app-main" >
         <note-add/>
-            <!-- <note-filter @filtered="setFilter" /> -->
+            <note-filter @filtered="setFilter" />
         <note-list :notes="notesToShow" @remove="removeNote"/>
     </section>
     
@@ -17,7 +19,8 @@ export default {
     `,
     data() {
         return {
-            notes: null
+            notes: null,
+            filterBy: null
 
 
         };
@@ -31,6 +34,9 @@ export default {
 
     },
     methods: {
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+        },
         loadNotes() {
             noteService.query()
                 .then(notes => this.notes = notes);
@@ -55,6 +61,10 @@ export default {
     computed: {
         notesToShow() {
             return this.notes;
+            // if (!this.filterBy) return this.notes;
+            // const regex = new RegExp(this.filterBy.title, 'i');
+            // return this.notes.filter(note => (regex.test(note.title)
+
 
         }
 
@@ -65,6 +75,7 @@ export default {
     components: {
         noteList,
         noteAdd,
+        noteFilter
 
 
 

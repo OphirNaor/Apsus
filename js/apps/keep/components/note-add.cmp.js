@@ -4,7 +4,7 @@ import { eventBus } from "../../../services/eventBus-service.js";
 
 export default {
     template: `
-    <section>
+    <section class="note-add-container">
     <form @submit.prevent.stop="save" class="note-add flex space-between">
                 <input class="add-start" type="text" :placeholder="placeholder" v-model:value="newNote.info.title" @change="save" autofocus>
                 <div class="actions flex space-between">

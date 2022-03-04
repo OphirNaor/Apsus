@@ -10,7 +10,7 @@ import { eventBus } from '../../../services/eventBus-service.js';
 export default {
     props: ['notes'],
     template: `
-    <section class="note-list">
+    <section>
         <div class="note-list">
             <div v-for="note in notes" :key="note.id" class="note-preview-container" >                
                 <note-preview :note="note"/>

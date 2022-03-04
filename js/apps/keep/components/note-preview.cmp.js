@@ -1,7 +1,8 @@
 // import { eventBus } from '../../../services/eventBus-service.js'
 import noteTxt from './note-txt.cmp.js';
 import noteImg from './note-img.cmp.js';
-import noteTODO from './note-todo.cmp.js';
+import noteTodo from './note-todo.cmp.js';
+import noteVideo from './note-video.cmp.js';
 
 
 
@@ -55,7 +56,8 @@ export default {
     components: {
         noteTxt,
         noteImg,
-        noteTODO
+        noteTodo,
+        noteVideo
 
 
     }

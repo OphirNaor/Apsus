@@ -128,14 +128,12 @@ function _createNotes() {
             },
             {
                 id: "n108",
-                type: "note-todos",
+                type: "note-img",
                 isPinned: false,
                 info: {
-                    title: "Get my stuff together",
-                    todos: [
-                        { txt: "Driving liscence", done: false },
-                        { txt: "Coding power", done: true }
-                    ]
+                    title: "cat",
+                    url: "./img/cat.webp"
+
                 },
                 style: {
                     bgc: "#ffffff"

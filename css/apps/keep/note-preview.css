@@ -1,3 +1,7 @@
+.note-preview-container h1 {
+    font-size: 25px;
+}
+
 .note-preview-container {
     padding: 20px;
     border: 1px solid rgb(0, 0, 0);
@@ -26,17 +30,15 @@
     padding: 15px;
 }
 
-
-/* 
-.action-container {
-    position: relative;
+.actions-container {
+    cursor: pointer;
+    /* position: relative;
     padding-top: 1em;
-    visibility: hidden;
+    visibility: hidden; */
+
 }
 
-.action-container:hover {
-    visibility: visible;
-} */
+
 
 
 .color-palette {

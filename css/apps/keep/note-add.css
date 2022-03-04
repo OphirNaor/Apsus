@@ -6,6 +6,9 @@
     max-width: 100%;
 }
 
+.note-add-container {
+    padding: 1.5em;
+}
 
 .add-start {
     display: block;
