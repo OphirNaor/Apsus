@@ -36,16 +36,22 @@ svg {
 }
 */
 
+.mail-app {
+    height: 90vh;
+}
+
 .mail-app-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-top: 10px;
 }
-.mail-list{
+
+.mail-list {
     width: 100%;
 }
-.mail-side-bar{
+
+.mail-side-bar {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -54,7 +60,8 @@ svg {
     color: #4d4f52;
     margin-right: 15px;
 }
-.side-bar-el{
+
+.side-bar-el {
     display: flex;
     align-items: center;
     position: relative;
@@ -64,19 +71,23 @@ svg {
     font-family: sans-serif;
     font-size: .875rem;
 }
-.mail-side-bar-btn:first-child{
+
+.mail-side-bar-btn:first-child {
     font-weight: bold;
 }
-.side-bar-el .counter{
+
+.side-bar-el .counter {
     position: absolute;
     right: 12px;
 }
-svg{
+
+svg {
     width: 40px;
     height: auto;
     /*fill: #65676c;*/
     fill: #4d4f52;
 }
+
 .mail-side-bar svg {
     width: 20px;
     height: 20px;
@@ -84,34 +95,41 @@ svg{
     /*fill: #202124;*/
     fill: #4d4f52;
 }
-.mail-side-bar-btn{
+
+.mail-side-bar-btn {
     height: 32px;
     border-radius: 0 40px 40px 0px;
 }
-.mail-side-bar-btn:hover{
+
+.mail-side-bar-btn:hover {
     background-color: #f1f3f4;
     cursor: pointer;
 }
-.mail-side-bar-btn:active{
+
+.mail-side-bar-btn:active {
     background-color: #e8eaed;
     cursor: pointer;
 }
-.mail-side-bar-btn:focus{
+
+.mail-side-bar-btn:focus {
     background-color: #e8eaed;
     font-weight: bold;
 }
-.mail-side-bar-btn:first-child:focus{
+
+.mail-side-bar-btn:first-child:focus {
     background-color: #fce8e6;
     color: #d93025;
 }
-.mail-side-bar-btn:first-child svg:focus{
+
+.mail-side-bar-btn:first-child svg:focus {
     fill: #d93025;
 }
 
-.mail-list{
+.mail-list {
     margin-bottom: 20px;
 }
-.mail-list-container{
+
+.mail-list-container {
     border-top: 1px solid #dfdfdf;
     padding: 10px;
     min-height: 40px;
@@ -119,51 +137,62 @@ svg{
     align-items: center;
     font-family: sans-serif;
 }
-.mail-list-container:last-child{
+
+.mail-list-container:last-child {
     border-bottom: 1px solid #dfdfdf;
 }
-.mail-list-container:hover{
+
+.mail-list-container:hover {
     box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     z-index: 2;
 }
-.mail-list-container:hover .options{
+
+.mail-list-container:hover .options {
     opacity: 1;
 }
-.mail-preview-container{
+
+.mail-preview-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     position: relative;
 }
-.mail-preview-container svg{
+
+.mail-preview-container svg {
     width: 20px;
     height: auto;
     margin-right: 10px;
     opacity: .7;
 }
-.mail-subject{
+
+.mail-subject {
     /*width: 90%;*/
     height: 20px;
     overflow: hidden;
 }
-.mail-to{
+
+.mail-to {
     width: 300px;
     padding-right: 20px;
 }
-.mail-subject{
+
+.mail-subject {
     display: inline-flex;
     padding-right: 25px;
 }
-.mail-subject p:first-child{
+
+.mail-subject p:first-child {
     font-weight: bold;
     padding-right: 5px;
 }
-.mail-date{
+
+.mail-date {
     min-width: 120px;
     padding-right: 20px;
     display: none;
 }
-.mail-preview-container .options{
+
+.mail-preview-container .options {
     background: #fff;
     position: absolute;
     right: 20px;
@@ -174,6 +203,7 @@ svg{
     opacity: 0;
     transition: all .1s;
 }
+
 /*.mail-preview-container .options svg:after{
     content: '';
     position: absolute;
@@ -182,23 +212,26 @@ svg{
     border-radius: 50px;
     background-color: green;
 }*/
-.mail-preview-container .options svg:hover{
+.mail-preview-container .options svg:hover {
     position: relative;
     cursor: pointer;
 }
+
 /*.mail-preview-container .options:before{
     content: "... ";
     padding-right: 20px;
 }*/
-.mail-open-container h3{
+.mail-open-container h3 {
     padding: 10px 0;
     margin-top: 5px;
     margin-bottom: -6px;
 }
-.mail-open-container p{
+
+.mail-open-container p {
     font-size: .9rem;
     margin-bottom: 15px;
 }
-.mail-body{
+
+.mail-body {
     max-width: 100ch;
 }

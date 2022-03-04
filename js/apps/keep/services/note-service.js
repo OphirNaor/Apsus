@@ -12,7 +12,8 @@ export const noteService = {
     setBgc,
     setTxt,
     setTodos,
-    duplicateNote
+    duplicateNote,
+    addNewNote
 
 
 }
