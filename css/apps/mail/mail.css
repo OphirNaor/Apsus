@@ -8,11 +8,7 @@
     /*justify-content: center;*/
     justify-content: flex-start;
     padding-top: 10px;
-<<<<<<< HEAD
     margin-bottom: 20px;
-=======
-
->>>>>>> 17ff4cace27abbad2e5dd6bd22bc1041b2339241
 }
 
 .mail-list {
@@ -297,6 +293,7 @@ svg {
     padding-top: 50px;
 }
 
+
 .main-details-container {
     border: solid;
     height: 70%;
@@ -308,7 +305,6 @@ svg {
 }
 .new-mail {
     flex-grow: 1;
-    /* border: 1px solid black; */
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -352,11 +348,8 @@ svg {
 }
 .send {
     background-color: #dfe0e1;
-    /*width: 90px;*/
     border-radius: 20px;
-    /*border: 1px solid lightgray;*/
     border: none;
-    /*height: 30px;*/
     padding: 10px 30px;
 }
 
@@ -389,6 +382,31 @@ svg {
     padding: 15px;
 }
 
+.reply-btn {
+    border-radius: 20px;
+    align-items: center;
+    margin: 5px;
+    border: 1px solid grey;
+    padding: 10px 30px;
+}
+
+.reply-btn:hover {
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+.back-btn {
+    border-radius: 20px;
+    border: none;
+    border: 1px solid grey;
+    padding: 10px 30px;
+
+}
+
+.back-btn:hover {
+    cursor: pointer;
+    border: 1px solid #fff;
+}
 /* MOBILE */
 
 @media (max-width: 768px){

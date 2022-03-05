@@ -2,7 +2,6 @@ import mailList from "../components/mail-list.cmp.js";
 import { mailService } from "../services/mail-service.js";
 import { eventBus } from "../../../services/eventBus-service.js";
 import mailFilter from "../components/mail-filter.cmp.js";
-import mailSort from "../components/mail-sort.cmp.js";
 import mailSidebar from "../components/mail-sidebar.cmp.js";
 import mailCompose from "../components/mail-compose.cmp.js";
 import newMail from "../components/new-mail.cmp.js";
@@ -14,7 +13,6 @@ export default {
             <mail-compose @new="open"></mail-compose>
             <div class="filters">
                 <mail-filter  @filtered="setFilter" />
-                <mail-sort @sort="sorting"></mail-sort>
             </div>
         </div>
         <div class="mail-app-container">
@@ -40,9 +38,9 @@ export default {
   },
   methods: {
     sidebarClear() {
-      var sidebarEls = document.getElementsByClassName('mail-side-bar-btn');
-      for(let i = 0; i < 5; i++){
-        sidebarEls[i].classList.remove('mail-side-bar-focus');
+      var sidebarEls = document.getElementsByClassName("mail-side-bar-btn");
+      for (let i = 0; i < 5; i++) {
+        sidebarEls[i].classList.remove("mail-side-bar-focus");
       }
     },
     loadMails() {
@@ -109,61 +107,37 @@ export default {
       if (this.sidebar === "inbox") {
         this.taggedMails = this.mails.filter((mail) => {
           this.sidebarClear();
-          var sidebarInbox = document.getElementById('side-bar-inbox');
-          sidebarInbox.classList.add('mail-side-bar-focus');
+          var sidebarInbox = document.getElementById("side-bar-inbox");
+          sidebarInbox.classList.add("mail-side-bar-focus");
           return !mail.isRemoved;
         });
       } else if (this.sidebar === "marked") {
         this.taggedMails = this.mails.filter((mail) => {
           this.sidebarClear();
-          var sidebarMarked = document.getElementById('side-bar-marked');
-          sidebarMarked.classList.add('mail-side-bar-focus');
+          var sidebarMarked = document.getElementById("side-bar-marked");
+          sidebarMarked.classList.add("mail-side-bar-focus");
           return mail.isMarked;
         });
       } else if (this.sidebar === "sent") {
         this.taggedMails = this.mails.filter((mail) => {
           this.sidebarClear();
-          var sidebarSent = document.getElementById('side-bar-sent');
-          sidebarSent.classList.add('mail-side-bar-focus');
+          var sidebarSent = document.getElementById("side-bar-sent");
+          sidebarSent.classList.add("mail-side-bar-focus");
           return mail.isSent;
         });
       } else if (this.sidebar === "drafts") {
         this.taggedMails = this.mails.filter((mail) => {
           this.sidebarClear();
-          var sidebarDrafts = document.getElementById('side-bar-drafts');
-          sidebarDrafts.classList.add('mail-side-bar-focus');
+          var sidebarDrafts = document.getElementById("side-bar-drafts");
+          sidebarDrafts.classList.add("mail-side-bar-focus");
           return mail.isRemoved;
         });
       } else if (this.sidebar === "trash") {
         this.taggedMails = this.mails.filter((mail) => {
           this.sidebarClear();
-          var sidebarTrash = document.getElementById('side-bar-trash');
-          sidebarTrash.classList.add('mail-side-bar-focus');
+          var sidebarTrash = document.getElementById("side-bar-trash");
+          sidebarTrash.classList.add("mail-side-bar-focus");
           return mail.isRemoved;
-        });
-      } 
-
-
-    },
-    sorting(sortingBy) {
-      if (sortingBy === "date") {
-        console.log("checkcheck");
-        this.taggedMails.sort(function (a, b) {
-          return b.date - a.date;
-        });
-      }
-      if (sortingBy === "subject") {
-        this.taggedMails.sort(function (a, b) {
-          var subjectA = a.subject.toUpperCase();
-          var subjectB = b.subject.toUpperCase();
-          if (subjectA < subjectB) {
-            return -1;
-          }
-          if (subjectA > subjectB) {
-            return 1;
-          } else {
-            return 0;
-          }
         });
       }
     },
@@ -177,8 +151,8 @@ export default {
       const searchStr = this.filterBy.subject.toLowerCase();
       var read = this.filterBy.isRead;
 
-      const filterMail = this.taggedMails.filter(mail => {
-        return mail.subject.toLowerCase().includes(searchStr)
+      const filterMail = this.taggedMails.filter((mail) => {
+        return mail.subject.toLowerCase().includes(searchStr);
       });
 
       if (!read) read = "all";
@@ -195,8 +169,6 @@ export default {
     mailFilter,
     mailSidebar,
     newMail,
-    mailSort,
     mailCompose,
   },
 };
-

@@ -6,7 +6,7 @@ export default {
  <section v-if="mail" class="mail-details main-layout main-height">
         <div class="backToMailList">
 
-            <button @click="backToMailList">Back</button>
+            <button class="back-btn" @click="backToMailList">Back</button>
         </div>
         <div class="main-details-container">
         <div class="mail-options">
@@ -20,8 +20,8 @@ export default {
             <div> {{mail.from}} </div>
             <div class="mail-body">{{mail.body}}</div>
 
-            <div class="reply">
-                <button>Reply</button>
+            <div>
+                <button class="reply-btn">Reply</button>
             </div>
         </div>
 
@@ -44,25 +44,24 @@ export default {
   methods: {
     loadExpandMail() {
         const { mailId } = this.$route.params;
-        mailsService.getById(mailId)
+        mailService.getById(mailId)
             .then(mail => this.mail = mail);
     },
     backToMailList() {
         this.$router.push('/mail')
     },
     removeMail(mailId) {
-        mailsService.removeMail(mailId)
+        mailService.removeMail(mailId)
             .then((mail) => {
                 const msg = {
                     txt: 'Moved to trash',
                     type: 'success'
                 };
-                eventBus.$emit('showMsg', msg);
-
+                eventBus.emit('showMsg', msg);
             })
     },
     setMarkMail(mailId) {
-        mailsService.setMarkMail(mailId)
+        mailService.setMarkMail(mailId)
             .then((mail) => {
                 this.loadExpandMail()
                 if (!mail.isMarked) return
@@ -70,7 +69,7 @@ export default {
                     txt: 'Your mail was marked!',
                     type: 'success'
                 };
-                eventBus.$emit('showMsg', msg);
+                eventBus.emit('showMsg', msg);
             })
     },
     computed: {
@@ -79,6 +78,5 @@ export default {
         }
 
     },
-
 
 }}
