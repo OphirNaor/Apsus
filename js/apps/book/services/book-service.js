@@ -35,31 +35,6 @@ function addReview(review, bookId) {
     })
 }
 
-// function setDataForDisplay(books) {
-//     let displayBooks = books.map((book) => {
-//         console.log(book.volumeInfo.title)
-//         return {
-//             id: book.id,
-//             title: book.volumeInfo.title,
-//             subtitle: book?.searchInfo?.textSnippet,
-//             authors: [...book.volumeInfo.authors] || '',
-//             publishedDate: book.volumeInfo.publishedDate,
-//             pageCount: book.volumeInfo.pageCount,
-//             categories: [book.volumeInfo.title],
-//             thumbnail: book.volumeInfo.imageLinks?.thumbnail,
-//             language: book.volumeInfo.language,
-//             listPrice: {
-//                 amount: 0,
-//                 currencyCode: book.saleInfo.country,
-//                 isOnSale: false,
-//             },
-//         }
-//     })
-//     console.log(displayBooks)
-//     return displayBooks
-// }
-
-
 function _createBooks() {
     let books = utilService.loadFromStorage(BOOKS_KEY);
     if (!books || !books.length) {

@@ -8,6 +8,7 @@
 /* book-app */
 .book-app {
     min-height: 100vh;
+    background: linear-gradient(rgb(3, 3, 65), white, rgb(3, 3, 65))
 }
 
 
