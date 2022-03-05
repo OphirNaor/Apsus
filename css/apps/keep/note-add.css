@@ -21,7 +21,7 @@
     max-width: 100%;
 }
 
-.actions {
+.actions-add {
     justify-content: flex-end;
     font-size: 30px;
     letter-spacing: 7px;
@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 
-.actions>*:hover {
+.actions-add>*:hover {
     color: rgb(37, 162, 184);
     transition: 0.4s;
 }
