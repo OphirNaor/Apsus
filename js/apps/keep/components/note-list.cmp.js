@@ -12,10 +12,10 @@ export default {
     template: `
     <section>
         <div class="note-list">
-            <div v-for="note in notes" :key="note.id" class="note-preview-container" >                
+            <div v-for="note in notes" :key="note.id" class="note-preview" >                
                 <note-preview :note="note"/>
                 <div class="actions-container flex space-between">
-                    <a class="fa-solid fa-thumbtack pin-note" @click="pin(note.id)"title="Pin note"></a>
+                    <a v-if="note.isPined" class="fa-thin fa-thumbtack"></a><a v-else class="fa-solid fa-thumbtack pin-note" @click="pin(note.id)"title="Pin note"></a>
                     <a class="fa fa-trash" @click.stop="remove(note.id)"title="Delete note"></a>
                     <a class="fa fa-clone duplicate-note" @click="duplicate(note.id)"title="Duplicate note"></a>
                     <a class="fa fa-envelope" @click="sendByMail"></a>

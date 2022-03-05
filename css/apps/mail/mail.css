@@ -1,10 +1,18 @@
+.mail-app {
+    min-height: 100vh;
+}
+
 .mail-app-container {
     display: flex;
     flex-direction: row;
     /*justify-content: center;*/
     justify-content: flex-start;
     padding-top: 10px;
+<<<<<<< HEAD
     margin-bottom: 20px;
+=======
+
+>>>>>>> 17ff4cace27abbad2e5dd6bd22bc1041b2339241
 }
 
 .mail-list {
@@ -193,7 +201,7 @@ svg {
     max-width: 100ch;
 }
 
-.mail-options svg{
+.mail-options svg {
     width: 20px;
     height: auto;
     margin-right: 10px;

@@ -1,0 +1,190 @@
+.book-filter {
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* book-app */
+.book-app {
+    min-height: 100vh;
+    background: linear-gradient(rgb(3, 3, 65), white, rgb(3, 3, 65))
+}
+
+
+
+/* book-list */
+.book-list {
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.book-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+
+}
+
+
+
+/* book-preview */
+.book-preview {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.book-preview-img {
+    flex: 1;
+    padding: 10px;
+    transition: opacity .5s
+}
+
+.book-preview-img:hover {
+    opacity: 0.5;
+
+}
+
+.book-preview-container {
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(rgb(187, 221, 235), white);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: 10px;
+}
+
+
+/* book-details*/
+.book-details {
+    background-color: rgb(189, 194, 199);
+    position: relative;
+    padding: 5px;
+    /* height: 90vh; */
+    text-align: center;
+
+}
+
+.book-details ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    list-style: none;
+    padding-left: 5px;
+}
+
+.close-details {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.details-btn {
+    background-color: #837776;
+    color: white;
+    /* padding: 7px 15px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+.details-btn:hover, .details-btn:active {
+    background-color: rgb(83, 78, 78);
+
+}
+
+
+.book-details img {
+    max-width: 19vw;
+}
+
+/* review-add */
+
+.review-add {
+    position: relative;
+    padding: 5px;
+    height: 90vh;
+    text-align: center;
+
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: 10px auto;
+    justify-content: space-between;
+    height: 40vh;
+}
+
+.stars span {
+    color: rgb(223, 223, 167);
+}
+
+span.checked {
+    color: orange;
+}
+
+.review-container {
+    background-color: white;
+    border: 1px solid black;
+    width: 30vw;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.review-container li {
+    overflow: auto;
+}
+
+.review-container button {
+    margin-top: 10px;
+}
+
+/* user msg */
+
+.user-msg {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 10px;
+    z-index: 4;
+}
+
+.success {
+    background-color: rgb(27, 180, 27);
+}
+
+.error {
+    background-color: red;
+}
+
+.router-link-exact-active {
+    color: bisque
+}
