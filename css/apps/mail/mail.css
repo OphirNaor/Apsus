@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 /*.mail-app {
     height: 100%;
 }
@@ -40,6 +42,7 @@ svg {
     height: 90vh;
 }
 
+>>>>>>> 2399873ac687789864f8e10126e0ed6d0687263e
 .mail-app-container {
     display: flex;
     flex-direction: row;
