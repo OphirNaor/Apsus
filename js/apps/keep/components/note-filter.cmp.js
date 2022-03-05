@@ -1,37 +1,30 @@
 export default {
     template: `
-    <section class="notes-filter-container">
-                <input ref="noteInput" 
-                    @input="setFilter" 
-                    type="text" 
-                    v-model="filterBy.title" 
-                    placeholder="Search by title"
-                />
-                <select v-model="filterBy.type">
-                    <option disabled value="">Type:</option>
-                    <option value="noteImg">Image</option>
-                    <option value="noteTxt">Text</option>
-                    <option value="noteVideo">Video</option>
-                    <option value="noteTodo">List</option>
-                </select>
-           
+        <section class="note-filter">
+            <input @input="filter" 
+            v-model="filterBy.title" 
+            type="text" 
+            placeholder="Search a note">
+            <select @input="filter" v-model="filterBy.type">
+                <option value="all">All</option>
+                <option value="note-txt">Text</option>
+                <option value="note-todos">List</option>
+                <option value="note-img">Image</option>
+                <option value="note-video">Videos</option>
+            </select>
         </section>
     `,
     data() {
         return {
             filterBy: {
                 title: '',
-                type: ''
+                type: 'all'
             }
         };
     },
-    mounted() {
-        // this.$refs.noteInput.focus()
-    },
     methods: {
-        setFilter() {
-            console.log(this.filterBy);
-            this.$emit('filtered', { ...this.filterBy });
+        filter() {
+            this.$emit('filtered', this.filterBy);
 
         }
     }

@@ -2,16 +2,25 @@ export default {
     template: `
         <section class="home-page app-main">
         
-        <div class="home-container">
-        <Transition appear name="slide-fade">
-                <h3>Welcome to Apsus</h3>
-            </Transition>
-            <Transition appear name="slide-fade">
-            <p>All what you need in one application!</p>
-            </Transition>
-         </div>
-      
-            </section>
+        <div class="context">
+            <h1>Welcome to Apsus</h1>
+        </div>
+        <div class="area" >
+                <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+        </div >
+
+        </section>
     `,
 
 }

@@ -29,14 +29,13 @@ function query() {
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY);
     if (!notes || !notes.length) {
-        console.log('notes not found');
         notes = [
             {
                 id: "n101",
-                type: "noteTxt",
+                type: "note-txt",
                 isPinned: true,
                 info: {
-                    title: `Fullstack Me Baby!`
+                    txt: `Fullstack Me Baby!`
                 },
                 style: {
                     bgc: "#ffffff"
@@ -44,7 +43,7 @@ function _createNotes() {
             },
             {
                 id: "n102",
-                type: "noteImg",
+                type: "note-img",
                 isPinned: false,
                 info: {
                     title: "My Sweet Dog",
@@ -56,7 +55,7 @@ function _createNotes() {
             },
             {
                 id: "n103",
-                type: "noteTodo",
+                type: "note-todos",
                 isPinned: false,
                 info: {
                     title: "Get my stuff together",
@@ -71,11 +70,14 @@ function _createNotes() {
             },
             {
                 id: "n104",
-                type: "noteTxt",
+                type: "note-todos",
                 isPinned: false,
                 info: {
-                    title: "There are only 10 types of people in the world: Those that understand binary and those that don't",
-
+                    title: "Get my stuff together",
+                    todos: [
+                        { txt: "Driving liscence", done: false },
+                        { txt: "Coding power", done: true }
+                    ]
                 },
                 style: {
                     bgc: "#ffffff"
@@ -83,16 +85,13 @@ function _createNotes() {
             },
             {
                 id: "n105",
-                type: "noteTodo",
+                type: "note-todos",
                 isPinned: false,
                 info: {
-                    title: "Shopping List",
+                    title: "Get my stuff together",
                     todos: [
-                        { txt: "Eggs", done: true },
-                        { txt: "Milk", done: true },
-                        { txt: "Bread", done: true },
-                        { txt: "Cheese", done: false },
-                        { txt: "Chocolate", done: false }
+                        { txt: "Driving liscence", done: false },
+                        { txt: "Coding power", done: true }
                     ]
                 },
                 style: {
@@ -101,7 +100,7 @@ function _createNotes() {
             },
             {
                 id: "n106",
-                type: "noteImg",
+                type: "note-img",
                 isPinned: false,
                 info: {
                     title: "My Ex",
@@ -114,15 +113,13 @@ function _createNotes() {
             },
             {
                 id: "n107",
-                type: "noteTodo",
+                type: "note-todos",
                 isPinned: false,
                 info: {
-                    title: "things for the flight",
+                    title: "Get my stuff together",
                     todos: [
-                        { txt: "Flight tickets", done: false, },
-                        { txt: "Passport", done: true },
-                        { txt: "Clothes", done: false },
-                        { txt: "Money", done: true }
+                        { txt: "Driving liscence", done: false },
+                        { txt: "Coding power", done: true }
                     ]
                 },
                 style: {
@@ -131,10 +128,11 @@ function _createNotes() {
             },
             {
                 id: "n108",
-                type: "noteVideo",
+                type: "note-img",
                 isPinned: false,
                 info: {
-                    url: "https://www.youtube.com/embed/3suBGEWLwEw"
+                    title: "cat",
+                    url: "./img/cat.webp"
 
                 },
                 style: {
@@ -149,15 +147,8 @@ function _createNotes() {
 }
 
 function save(note) {
-    if (note.id) {
-        console.log('inside if');
-        return storageService.put(NOTES_KEY, note);
-    }
-    else {
-        console.log('inside else');
-        return storageService.post(NOTES_KEY, note);
-    }
-
+    if (note.id) return storageService.put(NOTES_KEY, note);
+    else return storageService.post(NOTES_KEY, note);
 }
 
 
@@ -166,7 +157,6 @@ function getNoteById(noteId) {
 }
 
 function addNewNote(note) {
-    console.log('add new note was called');
     let newNote
     switch (note.type) {
         case 'note-txt':

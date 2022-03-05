@@ -35,7 +35,6 @@ export default {
     },
     methods: {
         setFilter(filterBy) {
-            console.log('filterd');
             this.filterBy = filterBy;
         },
         loadNotes() {
@@ -61,20 +60,14 @@ export default {
     },
     computed: {
         notesToShow() {
-            // return this.notes;
-            if (!this.filterBy) return this.notes;
-            const regex = new RegExp(this.filterBy.title, 'i');
-            if (this.filterBy.type) {
-                return this.notes.filter(note => {
-                    return regex.test(note.title) && note.type === this.filterBy.type
-                });
-            } else {
-                return this.notes.filter(note => {
-                    console.log(note);
-                    return regex.test(note.title);
-                });
-            }
-        },
+            return this.notes;
+            // if (!this.filterBy) return this.notes;
+            // const regex = new RegExp(this.filterBy.title, 'i');
+            // return this.notes.filter(note => (regex.test(note.title)
+
+
+        }
+
 
     },
 
@@ -88,7 +81,6 @@ export default {
 
     }
 }
-
 
 
 

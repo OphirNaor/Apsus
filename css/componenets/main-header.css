@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    height: 100%;
 }
 
 
@@ -26,17 +26,17 @@
     color: rgb(255, 255, 255);
     padding: 10px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1rem
 
 }
 
 .header-link:hover {
-    color: rgb(0, 0, 0);
+    color: #cfd9df;
     padding: 10px;
 }
 
 .header-link:active {
-    color: rgb(0, 0, 0);
+    color: #cfd9df;
     padding: 10px;
 }
 
@@ -44,5 +44,5 @@
     height: 55px;
     margin-left: 20px;
     color: white;
-    font-size: 35px;
+    font-size: 2rem;
 }

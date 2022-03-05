@@ -30,8 +30,7 @@ export default {
                 },
 
             },
-            active: null,
-            noteTitle: null
+            active: null
 
         };
     },
@@ -59,15 +58,10 @@ export default {
 
         },
         save() {
-            console.log(this.noteTitle);
-            if (!this.noteTitle) return
-            this.newNote.info.title = this.noteTitle;
-            console.log('save was called');
+            if (!this.newNote.info.title) return
             noteService.addNewNote(this.newNote)
-                .then((newNote) => {
-                    console.log(this.$parent.notes);
-                    this.$parent.notes.push(newNote)
-
+                .then(() => {
+                    eventBus.emit('savedNote')
                     this.newNote.info.title = ''
                     this.active = true
                     setTimeout(() => {
