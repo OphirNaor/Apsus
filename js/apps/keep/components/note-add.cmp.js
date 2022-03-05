@@ -5,8 +5,8 @@ import { eventBus } from "../../../services/eventBus-service.js";
 export default {
     template: `
     <section class="note-add-container">
-    <form @submit.prevent.stop="save" class="note-add flex space-between">
-                <input class="add-start" type="text" :placeholder="placeholder" v-model:value="newNote.info.title" @change="save" autofocus>
+    <form class="note-add flex space-between">
+                <input class="add-start" type="text" :placeholder="placeholder" v-model="noteTitle" autofocus>
                 <div class="actions flex space-between">
                     <a class="btn-save fa fa-save" :class ="{saved:active}" @click.prevent="save" title="Save"></a>
                     <a class="btn-txt fa fa-font" :class ="{active:newNote.type === 'note-txt'}" @click.prevent="setType('note-txt')" title="Text"></a>
@@ -30,7 +30,8 @@ export default {
                 },
 
             },
-            active: null
+            active: null,
+            noteTitle: null
 
         };
     },
@@ -58,10 +59,15 @@ export default {
 
         },
         save() {
-            if (!this.newNote.info.title) return
+            console.log(this.noteTitle);
+            if (!this.noteTitle) return
+            this.newNote.info.title = this.noteTitle;
+            console.log('save was called');
             noteService.addNewNote(this.newNote)
-                .then(() => {
-                    eventBus.emit('savedNote')
+                .then((newNote) => {
+                    console.log(this.$parent.notes);
+                    this.$parent.notes.push(newNote)
+
                     this.newNote.info.title = ''
                     this.active = true
                     setTimeout(() => {

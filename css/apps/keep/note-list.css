@@ -1,8 +1,9 @@
 .note-list {
-    margin: auto;
+    margin: 0 auto;
     columns: 3 200px;
     max-width: 1000px;
     gap: 15px;
     display: flex;
     flex-wrap: wrap;
+
 }

@@ -29,33 +29,34 @@ function query() {
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY);
     if (!notes || !notes.length) {
+        console.log('notes not found');
         notes = [
             {
                 id: "n101",
                 type: "note-txt",
                 isPinned: true,
                 info: {
-                    txt: `Fullstack Me Baby!`
+                    title: `Fullstack Me Baby!`
                 },
                 style: {
                     bgc: "#ffffff"
                 }
             },
-            {
-                id: "n102",
-                type: "note-img",
-                isPinned: false,
-                info: {
-                    title: "My Sweet Dog",
-                    url: "./img/mydog.jpg",
-                },
-                style: {
-                    bgc: "#ffffff"
-                }
-            },
+            // // {
+            // //     id: "n102",
+            // //     type: "note-img",
+            // //     isPinned: false,
+            // //     info: {
+            // //         title: "My Sweet Dog",
+            // //         url: "./img/mydog.jpg",
+            // //     },
+            // //     style: {
+            // //         bgc: "#ffffff"
+            // //     }
+            // },
             {
                 id: "n103",
-                type: "note-todos",
+                type: "noteTodo",
                 isPinned: false,
                 info: {
                     title: "Get my stuff together",
@@ -70,7 +71,7 @@ function _createNotes() {
             },
             {
                 id: "n104",
-                type: "note-todos",
+                type: "noteTodo",
                 isPinned: false,
                 info: {
                     title: "Get my stuff together",
@@ -85,7 +86,7 @@ function _createNotes() {
             },
             {
                 id: "n105",
-                type: "note-todos",
+                type: "noteTodo",
                 isPinned: false,
                 info: {
                     title: "Get my stuff together",
@@ -113,7 +114,7 @@ function _createNotes() {
             },
             {
                 id: "n107",
-                type: "note-todos",
+                type: "noteTodo",
                 isPinned: false,
                 info: {
                     title: "Get my stuff together",
@@ -147,8 +148,15 @@ function _createNotes() {
 }
 
 function save(note) {
-    if (note.id) return storageService.put(NOTES_KEY, note);
-    else return storageService.post(NOTES_KEY, note);
+    if (note.id) {
+        console.log('inside if');
+        return storageService.put(NOTES_KEY, note);
+    }
+    else {
+        console.log('inside else');
+        return storageService.post(NOTES_KEY, note);
+    }
+
 }
 
 
@@ -157,6 +165,7 @@ function getNoteById(noteId) {
 }
 
 function addNewNote(note) {
+    console.log('add new note was called');
     let newNote
     switch (note.type) {
         case 'note-txt':
