@@ -1,10 +1,10 @@
 import mailList from "../components/mail-list.cmp.js";
 import { mailService } from "../services/mail-service.js";
+import { eventBus } from "../../../services/eventBus-service.js";
 import mailFilter from "../components/mail-filter.cmp.js";
 import mailSort from '../components/mail-sort.cmp.js'
-import mailCompose from '../components/mail-compose.cmp.js'
 import mailSidebar from '../components/mail-sidebar.cmp.js'
-import { eventBus } from "../../../services/eventBus-service.js";
+import mailCompose from '../components/mail-compose.cmp.js'
 import newMail from '../components/new-mail.cmp.js'
 
 
@@ -21,7 +21,7 @@ export default {
         <div class="mail-app-container">
             <mail-sidebar :counter="counterMail"  @sidebar="search" ></mail-sidebar>
             <new-mail v-if="isNewMail" @deletDraft="open" @addNewMail="addMail"></new-mail>
-            <mail-list @staredMail="setStarMail" @removeMail="removeMail" @read="updateMail" v-if="!isNewMail" :mails="mailsToShow"/>
+            <mail-list @markedMail="setMarkMail" @totrashMail="removeMail" @read="updateMail" v-if="!isNewMail" :mails="mailsToShow"/>
         </div>
     </section>
     `,
@@ -63,7 +63,6 @@ methods: {
         this.isNewMail = !this.isNewMail
     },
     addMail(newMail) {
-        console.log(newMail);
         this.isNewMail = !this.isNewMail
         mailService.addNewMail(newMail)
             .then(() => {
@@ -74,19 +73,10 @@ methods: {
                 };
                 eventBus.emit('showMsg', msg);
             })
-            .catch(err => {
-                // console.log('err', err);
-                const msg = {
-                    txt: 'Error. Please try later',
-                    type: 'error'
-                };
-                eventBus.emit('showMsg', msg);
-            });
     },
     removeMail(mailId) {
         mailService.removeMail(mailId)
             .then((mail) => {
-                console.log(mail);
                 this.loadMails()
                 const msg = {
                     txt: 'Moved to Trash !',
@@ -96,11 +86,11 @@ methods: {
             })
 
     },
-    setStarMail(mailId) {
-        mailService.setStarMail(mailId)
+    setMarkMail(mailId) {
+        mailService.setMarkMail(mailId)
             .then((mail) => {
                 this.loadMails()
-                if (!mail.isStared) return
+                if (!mail.isMarked) return
                 const msg = {
                     txt: 'Mail marked',
                     type: 'success'
@@ -126,7 +116,7 @@ methods: {
             })
         } else if (this.sidebar === 'marked') {
             this.taggedMails = this.mails.filter(mail => {
-                return mail.isStared
+                return mail.isMarked
             })
         } else if (this.sidebar === 'trash') {
             this.taggedMails = this.mails.filter(mail => {
@@ -137,8 +127,6 @@ methods: {
                 return mail.isSent
             })
         }
-
-
     },
     sorting(sortingBy) {
         if (sortingBy === 'date') {
@@ -191,9 +179,6 @@ computed: {
 
         return filterByRead;
     },
-
-
-
 },
 components: {
     mailList,

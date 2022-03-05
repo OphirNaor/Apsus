@@ -10,7 +10,7 @@ export const loggedinUser = {
 
 export const mailService = {
   query,
-  setStarMail,
+  setMarkMail,
   removeMail,
   updateMail,
   getById,
@@ -60,7 +60,7 @@ const gMails = [
   {
     id: "e104",
     from: "Sony Corporation",
-    subject: "removeMail you!",
+    subject: "Hello to you!",
     body: "Vestibulum vestibulum porta enim sed rutrum. Pellentesque efficitur, arcu sed eleifend ultricies, ante nisi tempus erat, quis laoreet leo purus a orci. Maecenas dapibus maximus enim at porta. Curabitur et sem porta, tempus leo nec, gravida orci. Aenean rutrum auctor ornare. Duis convallis augue dolor, eu tincidunt erat venenatis sit amet. Maecenas mattis non ante quis placerat. Maecenas eget tempus velit, non commodo leo. Duis ac massa ornare, euismod ex ac, fringilla risus. Etiam porttitor suscipit mauris porta varius. Aliquam vitae lorem quis odio semper congue. Quisque rutrum semper dolor sed tristique. Fusce porttitor nunc in dui rhoncus imperdiet. Praesent auctor libero vitae hendrerit interdum. Nullam quis nibh dapibus nibh porttitor lobortis.",
     isRead: false,
     sentAt: new Date().toString(),
@@ -89,9 +89,9 @@ function query() {
   return storageService.query(MAILS_KEY);
 }
 
-function setStarMail(mailId) {
+function setMarkMail(mailId) {
   return getById(mailId).then((mail) => {
-    mail.isStared = !mail.isStared;
+    mail.isMarked = !mail.isMarked;
     return storageService.put(MAILS_KEY, mail);
   });
 }
@@ -99,7 +99,7 @@ function setStarMail(mailId) {
 function removeMail(mailId) {
   return getById(mailId).then((mail) => {
     mail.isRemoved = true;
-    return storageService.put(MAILS_KEY, mailId);
+    return storageService.put(MAILS_KEY, mail);
   });
 }
 
@@ -130,7 +130,7 @@ function getEmptyMail() {
     from:"",
     body: "",
     isRead: false,
-    sentAt: new Date().toString(),
+    sentAt: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
     to: "",
     isSent: false,
     isStar: false,

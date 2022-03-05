@@ -6,17 +6,17 @@ export default {
         <section class="mail-list">
 
                 <div v-for="mail in mails" :key="mail.id" class="mail-list-container">
-                    <mail-preview @read="mailRead" @staredMail="staredMail" @removeMail="deleteMail" :mail="mail" />    
+                    <mail-preview @read="mailRead" @markedMail="markedMail" @totrashMail="totrashMail" :mail="mail" />    
                 </div>
 
         </section>
     `,
   methods: {
-    deleteMail(mailId) {
-      this.$emit("removeMail", mailId);
+    totrashMail(mailId) {
+      this.$emit("totrashMail", mailId);
     },
-    staredMail(mailId) {
-      this.$emit("staredMail", mailId);
+    markedMail(mailId) {
+      this.$emit("markedMail", mailId);
     },
     mailRead(mailId) {
       this.$emit("read", mailId);
