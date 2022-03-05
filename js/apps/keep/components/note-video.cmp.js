@@ -2,7 +2,7 @@ export default {
     props: ['info'],
     template: `
     <section class= "note-video">
-           <iframe src="modifedSrc" frameborder="0"></iframe>
+           <iframe width="180px" :src="modifedSrc" frameborder="0"></iframe>
     </section>
     
     

@@ -7,3 +7,9 @@
     flex-wrap: wrap;
 
 }
+
+
+/* note-todo */
+.complete {
+    text-decoration: line-through;
+}

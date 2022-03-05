@@ -33,7 +33,7 @@ function _createNotes() {
         notes = [
             {
                 id: "n101",
-                type: "note-txt",
+                type: "noteTxt",
                 isPinned: true,
                 info: {
                     title: `Fullstack Me Baby!`
@@ -42,18 +42,18 @@ function _createNotes() {
                     bgc: "#ffffff"
                 }
             },
-            // // {
-            // //     id: "n102",
-            // //     type: "note-img",
-            // //     isPinned: false,
-            // //     info: {
-            // //         title: "My Sweet Dog",
-            // //         url: "./img/mydog.jpg",
-            // //     },
-            // //     style: {
-            // //         bgc: "#ffffff"
-            // //     }
-            // },
+            {
+                id: "n102",
+                type: "noteImg",
+                isPinned: false,
+                info: {
+                    title: "My Sweet Dog",
+                    url: "./img/mydog.jpg",
+                },
+                style: {
+                    bgc: "#ffffff"
+                }
+            },
             {
                 id: "n103",
                 type: "noteTodo",
@@ -71,14 +71,11 @@ function _createNotes() {
             },
             {
                 id: "n104",
-                type: "noteTodo",
+                type: "noteTxt",
                 isPinned: false,
                 info: {
-                    title: "Get my stuff together",
-                    todos: [
-                        { txt: "Driving liscence", done: false },
-                        { txt: "Coding power", done: true }
-                    ]
+                    title: "There are only 10 types of people in the world: Those that understand binary and those that don't",
+
                 },
                 style: {
                     bgc: "#ffffff"
@@ -89,10 +86,13 @@ function _createNotes() {
                 type: "noteTodo",
                 isPinned: false,
                 info: {
-                    title: "Get my stuff together",
+                    title: "Shopping List",
                     todos: [
-                        { txt: "Driving liscence", done: false },
-                        { txt: "Coding power", done: true }
+                        { txt: "Eggs", done: true },
+                        { txt: "Milk", done: true },
+                        { txt: "Bread", done: true },
+                        { txt: "Cheese", done: false },
+                        { txt: "Chocolate", done: false }
                     ]
                 },
                 style: {
@@ -101,7 +101,7 @@ function _createNotes() {
             },
             {
                 id: "n106",
-                type: "note-img",
+                type: "noteImg",
                 isPinned: false,
                 info: {
                     title: "My Ex",
@@ -117,10 +117,12 @@ function _createNotes() {
                 type: "noteTodo",
                 isPinned: false,
                 info: {
-                    title: "Get my stuff together",
+                    title: "things for the flight",
                     todos: [
-                        { txt: "Driving liscence", done: false },
-                        { txt: "Coding power", done: true }
+                        { txt: "Flight tickets", done: false, },
+                        { txt: "Passport", done: true },
+                        { txt: "Clothes", done: false },
+                        { txt: "Money", done: true }
                     ]
                 },
                 style: {
@@ -129,11 +131,10 @@ function _createNotes() {
             },
             {
                 id: "n108",
-                type: "note-img",
+                type: "noteVideo",
                 isPinned: false,
                 info: {
-                    title: "cat",
-                    url: "./img/cat.webp"
+                    url: "https://www.youtube.com/embed/3suBGEWLwEw"
 
                 },
                 style: {

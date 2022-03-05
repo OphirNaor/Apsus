@@ -1,4 +1,4 @@
-.note-filter {
+.notes-filter-container {
     margin: auto;
     display: flex;
     justify-content: center;
@@ -10,9 +10,10 @@
     border: black 1px solid;
     border-radius: 5px;
 
+
 }
 
-.note-filter input {
+.notes-filter-container input {
     min-width: 200px;
     height: 25px;
     border: none;
@@ -21,7 +22,7 @@
 }
 
 
-.note-filter select {
+.notes-filter-container select {
     min-width: 60px;
     height: 25px;
     text-align: center;
