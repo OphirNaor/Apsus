@@ -32,10 +32,10 @@ function _createNotes() {
         notes = [
             {
                 id: "n101",
-                type: "note-txt",
+                type: "noteTxt",
                 isPinned: true,
                 info: {
-                    txt: `Fullstack Me Baby!`
+                    title: `Fullstack Me Baby!`
                 },
                 style: {
                     bgc: "#ffffff"
@@ -43,7 +43,7 @@ function _createNotes() {
             },
             {
                 id: "n102",
-                type: "note-img",
+                type: "noteImg",
                 isPinned: false,
                 info: {
                     title: "My Sweet Dog",
@@ -55,7 +55,7 @@ function _createNotes() {
             },
             {
                 id: "n103",
-                type: "note-todos",
+                type: "noteTodo",
                 isPinned: false,
                 info: {
                     title: "Get my stuff together",
@@ -70,14 +70,11 @@ function _createNotes() {
             },
             {
                 id: "n104",
-                type: "note-todos",
+                type: "noteTxt",
                 isPinned: false,
                 info: {
-                    title: "Get my stuff together",
-                    todos: [
-                        { txt: "Driving liscence", done: false },
-                        { txt: "Coding power", done: true }
-                    ]
+                    title: "There are only 10 types of people in the world: Those that understand binary and those that don't",
+
                 },
                 style: {
                     bgc: "#ffffff"
@@ -85,13 +82,16 @@ function _createNotes() {
             },
             {
                 id: "n105",
-                type: "note-todos",
+                type: "noteTodo",
                 isPinned: false,
                 info: {
-                    title: "Get my stuff together",
+                    title: "Shopping List",
                     todos: [
-                        { txt: "Driving liscence", done: false },
-                        { txt: "Coding power", done: true }
+                        { txt: "Eggs", done: true },
+                        { txt: "Milk", done: true },
+                        { txt: "Bread", done: true },
+                        { txt: "Cheese", done: false },
+                        { txt: "Chocolate", done: false }
                     ]
                 },
                 style: {
@@ -100,7 +100,7 @@ function _createNotes() {
             },
             {
                 id: "n106",
-                type: "note-img",
+                type: "noteImg",
                 isPinned: false,
                 info: {
                     title: "My Ex",
@@ -113,13 +113,15 @@ function _createNotes() {
             },
             {
                 id: "n107",
-                type: "note-todos",
+                type: "noteTodo",
                 isPinned: false,
                 info: {
-                    title: "Get my stuff together",
+                    title: "things for the flight",
                     todos: [
-                        { txt: "Driving liscence", done: false },
-                        { txt: "Coding power", done: true }
+                        { txt: "Flight tickets", done: false, },
+                        { txt: "Passport", done: true },
+                        { txt: "Clothes", done: false },
+                        { txt: "Money", done: true }
                     ]
                 },
                 style: {
@@ -128,11 +130,10 @@ function _createNotes() {
             },
             {
                 id: "n108",
-                type: "note-img",
+                type: "noteVideo",
                 isPinned: false,
                 info: {
-                    title: "cat",
-                    url: "./img/cat.webp"
+                    url: "https://www.youtube.com/embed/3suBGEWLwEw"
 
                 },
                 style: {
@@ -162,7 +163,7 @@ function addNewNote(note) {
         case 'note-txt':
             newNote = {
                 id: null,
-                type: "note-txt",
+                type: "noteTxt",
                 isPinned: false,
                 info: {
                     title: note.info.title,
@@ -172,7 +173,7 @@ function addNewNote(note) {
                 }
             }
             break
-        case 'note-todos':
+        case 'noteTodos':
             let data = note.info.title.split(',')
             let newTodos = []
             data.forEach(todo => {
@@ -180,7 +181,7 @@ function addNewNote(note) {
             });
             newNote = {
                 id: null,
-                type: "note-todos",
+                type: "noteTodos",
                 isPinned: false,
                 info: {
                     title: 'Click to edit',
@@ -191,10 +192,10 @@ function addNewNote(note) {
                 }
             }
             break
-        case 'note-img':
+        case 'noteImg':
             newNote = {
                 id: null,
-                type: "note-img",
+                type: "noteImg",
                 isPinned: false,
                 info: {
                     url: note.info.title,
@@ -205,10 +206,10 @@ function addNewNote(note) {
                 }
             }
             break
-        case 'note-video':
+        case 'notevideo':
             newNote = {
                 id: null,
-                type: "note-video",
+                type: "noteVideo",
                 isPinned: false,
                 info: {
                     url: note.info.title,
