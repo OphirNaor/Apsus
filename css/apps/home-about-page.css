@@ -1,0 +1,46 @@
+.home-container {
+    margin: auto;
+    padding: 15.75rem;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+
+}
+
+.about-container {
+    padding: 45px;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+.about-container a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    width: 40px;
+    padding: 7px 0;
+    align-items: center;
+}
+
+.home-page, .about-page {
+    background: url(/img/background.webp) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.slide-fade-enter-active {
+    transition: all 1s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
+}

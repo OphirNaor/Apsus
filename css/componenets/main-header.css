@@ -1,8 +1,9 @@
 .app-footer,
 .app-header {
-    background: lightgray;
     height: 10vh;
     text-align: center;
+    background-color: rgb(3, 44, 68);
+    color: white;
 
 }
 
@@ -21,7 +22,7 @@
 }
 
 .header-link {
-    color: rgb(138, 132, 132);
+    color: rgb(255, 255, 255);
     padding: 10px;
     text-decoration: none;
     font-size: 25px;
@@ -41,5 +42,6 @@
 .logo {
     height: 55px;
     margin-left: 20px;
+    color: white;
 
 }
