@@ -8,7 +8,10 @@
     /*justify-content: center;*/
     justify-content: flex-start;
     padding-top: 10px;
+<<<<<<< HEAD
     margin-bottom: 20px;
+=======
+>>>>>>> 88e71b1511d4a428192563879e66372b91273813
 }
 
 .mail-list {
@@ -75,7 +78,7 @@ svg {
     cursor: pointer;
 }
 
-.mail-side-bar-btn:focus, .mail-side-bar-focus{
+.mail-side-bar-btn:focus, .mail-side-bar-focus {
     background-color: #e8eaed;
     font-weight: bold;
 }
@@ -115,9 +118,10 @@ svg {
     opacity: 1;
 }
 
-.mail-preview-container, .mail-preview{
+.mail-preview-container, .mail-preview {
     width: 100%;
 }
+
 .mail-preview-container {
     display: flex;
     flex-direction: row;
@@ -132,7 +136,7 @@ svg {
     /*opacity: .7;*/
 }
 
-.mail-from{
+.mail-from {
     min-width: 140px;
     padding-right: 20px;
 }
@@ -204,9 +208,10 @@ svg {
 
 }
 
-.filters, .mail-filter, .search input{
+.filters, .mail-filter, .search input {
     width: 100%;
 }
+
 .filters-container {
     padding: 25px 25px 5px 25px;
     display: flex;
@@ -214,20 +219,24 @@ svg {
     /*justify-content: center;*/
     width: 100%;
 }
-.filters{
+
+.filters {
     margin-left: 60px;
 }
-.mail-filter{
+
+.mail-filter {
     display: flex;
     flex-direction: row;
 }
-.search{
+
+.search {
     margin-right: 20px;
     position: relative;
     display: flex;
     align-items: center;
 }
-.search button{
+
+.search button {
     position: absolute;
     left: 12px;
     border: none;
@@ -235,11 +244,13 @@ svg {
     width: 40px;
     background: transparent;
 }
-.search button i::before{
+
+.search button i::before {
     font-size: 16px;
     color: #5f6368;
 }
-.search input{
+
+.search input {
     background: #f1f3f4;
     height: 48px;
     /*max-width: 720px;*/
@@ -249,13 +260,15 @@ svg {
     padding-right: 20px;
     border-radius: 9px;
 }
-.mail-filter select{
+
+.mail-filter select {
     border-radius: 12px;
     padding: 9px;
     background: #f1f3f4;
     border: none;
 }
-.mail-sort{
+
+.mail-sort {
     display: none;
 }
 
@@ -274,7 +287,8 @@ svg {
     font-size: 0.875rem;
     color: #3c4043;
 }
-.compose-mail-btn:hover, .compose-mail-btn:focus{
+
+.compose-mail-btn:hover, .compose-mail-btn:focus {
     cursor: pointer;
     background-color: #fafafb;
     box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
@@ -303,6 +317,7 @@ svg {
     cursor: pointer;
     flex-direction: column;
 }
+
 .new-mail {
     flex-grow: 1;
     max-width: 700px;
@@ -339,13 +354,16 @@ svg {
     justify-content: space-between;
     padding: 15px;
 }
+
 .new-mail-btn svg {
     width: 25px;
     height: auto;
 }
-.new-mail-btn svg path{
+
+.new-mail-btn svg path {
     fill: #505050;
 }
+
 .send {
     background-color: #dfe0e1;
     border-radius: 20px;
@@ -358,27 +376,31 @@ svg {
     border: 1px solid #fff;
 }
 
-.new-mail{
+.new-mail {
     font-family: sans-serif;
     margin-left: 3px;
     width: 85%;
     margin-right: 20px;
     margin-bottom: 20px;
 }
-.new-mail h2{
+
+.new-mail h2 {
     margin: 15px;
 }
-.new-mail form label{
+
+.new-mail form label {
     padding: 15px;
 }
-.new-mail form label input{
+
+.new-mail form label input {
     height: 30px;
     margin-top: 13px;
     background: #f2f2f2;
     width: 100%;
     border-radius: 5px;
 }
-.new-mail textarea{
+
+.new-mail textarea {
     padding: 15px;
 }
 
@@ -409,32 +431,39 @@ svg {
 }
 /* MOBILE */
 
-@media (max-width: 768px){
-    .filters-container{
+@media (max-width: 768px) {
+    .filters-container {
         flex-direction: column;
         align-items: flex-start;
     }
-    .mail-compose{
+
+    .mail-compose {
         margin-bottom: 20px;
     }
-    .filters{
+
+    .filters {
         margin-left: 0px;
     }
-    .search input{
+
+    .search input {
         width: 100%;
     }
-    .mail-app-container{
+
+    .mail-app-container {
         flex-direction: column;
         align-items: flex-start;
     }
-    .mail-side-bar{
+
+    .mail-side-bar {
         margin-bottom: 15px;
         margin-left: 25px;
     }
-    .mail-side-bar-btn{
+
+    .mail-side-bar-btn {
         border-radius: 40px;
     }
-    .new-mail{
+
+    .new-mail {
         width: 690px;
         max-width: 90%;
         margin: 25px;
@@ -443,7 +472,7 @@ svg {
 
 
 
-.app-footer{
+.app-footer {
     display: grid;
     place-content: center;
 }

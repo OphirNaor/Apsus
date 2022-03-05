@@ -64,6 +64,20 @@ export default {
         styleNote(newBgColor) {
             eventBus.emit('setBgc', this.note.id, newBgColor);
         },
+        sendByMail() {
+            if (this.note.type === 'note-img' || this.note.type === 'note-video') {
+                const msg = {
+                    txt: 'Send only text or list notes',
+                    type: 'error',
+                };
+                eventBus.$emit('showMsg', msg);
+                return
+            }
+
+            let noteToSend = JSON.parse(JSON.stringify(this.note))
+            let msg = JSON.stringify(noteToSend.info)
+            this.$router.push(`/mail/compose/${msg}`);
+        }
 
 
 
