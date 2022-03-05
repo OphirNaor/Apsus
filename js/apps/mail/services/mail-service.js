@@ -127,6 +127,7 @@ function getEmptyMail() {
   return {
     id: "",
     subject: "",
+    from:"",
     body: "",
     isRead: false,
     sentAt: new Date().toString(),

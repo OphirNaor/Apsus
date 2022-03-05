@@ -44,10 +44,6 @@ export default {
       };
     },
     removeDraft() {
-    //   var sure = confirm("Delete this mail?");
-    //   console.log(sure);
-    //   if (sure) this.$emit("removeDraft");
-    //   else return;
     },
   },
   computed: {},
