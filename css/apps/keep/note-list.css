@@ -1,15 +1,8 @@
 .note-list {
-    margin: 0 auto;
+    margin: auto;
     columns: 3 200px;
     max-width: 1000px;
     gap: 15px;
     display: flex;
     flex-wrap: wrap;
-
-}
-
-
-/* note-todo */
-.complete {
-    text-decoration: line-through;
 }

@@ -19,7 +19,6 @@ function get(entityType, entityId) {
 
 function post(entityType, newEntity) {
     newEntity.id = _makeId()
-    console.log(newEntity.id);
     return query(entityType)
         .then(entities => {
             entities.push(newEntity);
